@@ -1,4 +1,47 @@
 \begin{ddef}[Modules]
-An $R$-module where $R$ is a ring, is an additive group with distributivity over all operations
+An $R$-module consists of:
+\begin{itemize}
+\item $R$ is a ring, 
+\item $A$ is an additive group.
+\item And, the map $R\times A \to A$ (both additions distribute and $r(s\,a)=(r\,s)a)$.
+\end{itemize}
+Additionally defines:
+\begin{description}
+    \item[Unitary Module] if $R$ has identity.
+    \item[Vector Space] if $R$ is a division ring.
+\end{description}
 \end{ddef}
 
+\begin{examples}
+    \begin{enumerate}
+        \item If $I$ is an ideal, then $R/I$ is an $R$ module.
+        \item The \textbf{pullback} along a ring homomorphism $\phi$ is:
+            $$r\,x \mapsto \phi(r)x$$
+        \item The endomorphisms of a ring $\ndo(R)$ with $f\,r \mapsto f(r)$ (brilliant!). 
+    \end{enumerate}
+\end{examples}
+
+\begin{ddef}[$R$-module homomorphims]
+    $f$ is a group homomorphims:
+    $$f(a+a') = f(a)+f(a')$$
+    And $f$ respects the module operation:
+    $$f(r\,a) = rf(a)$$
+\end{ddef}
+
+\begin{ddef}[Submodules]
+    If $A$ is an $R$-module then $B\subset A$ is a submodule iff:
+    \begin{itemize}
+        \item $B$ is an additive subgroup.
+        \item $\forall r\in R,\ b\in B,\ r\,b\in B$
+    \end{itemize}
+    Submodules of vector spaces are called \emph{subspaces}.
+\end{ddef}
+
+\begin{ddef}[Exact Sequence]
+    Let $f,g$ be module homomorphisms such that:
+    $$A\xrightarrow{f} B \xrightarrow{g} C$$
+    We say that the homomorphisms $f,g$ are exact iff:
+    $$\image f = \ker g$$
+    And a \textbf{Short Exact Sequence} has the form:
+    $$0\to A\xrightarrow{f} B \xrightarrow{g} C\to 0$$
+\end{ddef}

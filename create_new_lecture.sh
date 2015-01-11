@@ -5,6 +5,7 @@
 #   Example:
 #   To create the file of class 4 quickly:
 #    $ ./create_new_clase.sh 4
+# run with no arguments to create the next lecture file
 
 #RETURNS THE NAME OF THE FILE WITH THE LARGEST NUMERIC VALUE
 function last_lecture {
