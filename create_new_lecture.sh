@@ -2,9 +2,12 @@
 
 #   Usage:
 #     $ create_new_clase.sh [number of the class you want to create]
+#   -h <dirname>
+#   the flag -h nameofdir to create directory for homeworks
 #   Example:
 #   To create the file of class 4 quickly:
 #    $ ./create_new_clase.sh 4
+#   
 # run with no arguments to create the next lecture file
 
 #DEFAULT OPTIONS
@@ -45,10 +48,13 @@ function new_dir {
         #the inside of the directory
         cd $1 &&\
         ln -s ../general.sty .
+    }
+
         #add the line to the TEX file
+function add_to_tex_file {
         TEX='../algebra_II_notes.tex'
         match='\\end{document}'
-        insert='\\input{'$1'/$FILESUFFIX}'
+        insert='\\input{'$1'/'$FILESUFFIX'}'
         sed -i "s@$match@$insert\n$match@" $TEX
     }
 
@@ -62,6 +68,7 @@ if [ "$NAMEOFDIR" == "" ] ; then
     fi
     echo Creating new dir $new_name
    new_dir $new_name 
+   add_to_tex_file $new_name
     exit 0
 elif [ -a $NAMEOFDIR ] ; then
     echo "The file already exists!!!"
