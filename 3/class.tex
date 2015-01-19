@@ -1,0 +1,18 @@
+%Jan 16 
+\begin{remarks}
+A good way to show that two modules are isomorphic $X\cong Y$ is to find maps $\alpha\from X \to Y, \beta\from Y \to X$ such that their composition if the identity map.
+\end{remarks}
+
+\begin{teorema}
+Suppose $A\xrightarrow{f} B \xrightarrow{g} C\to 0$ and $D$ is an $R$-module. Then, 
+$$D\otimes_R A\xrightarrow{f} D\otimes_R B \xrightarrow{g} D\otimes_R C\to 0$$
+\begin{proof}
+Need to show: 
+\begin{enumerate}[(i)]
+\item $\im(1_D\otimes g) = D\otimes C$. Use that $g$ is onto to show that $1_D\otimes g$ spits out all generators.
+\item  $\im(1_D\otimes f)\subset \ker(1_D\otimes g)$. Note that the composition $(1_D\otimes g)(1_D\otimes f) =0$.
+\item  $\im(1_D\otimes f)\supset \ker(1_D\otimes g)$. This one is hard!! Better off reading it of the book.
+\end{enumerate}
+@@hungerford 210@@
+\end{proof}
+\end{teorema}
