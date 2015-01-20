@@ -1,7 +1,7 @@
 \begin{description}
 \item[IV.5.2] Let $A$ and $B$ be abelian groups.
 \begin{enumerate}[(a)]
-\item First we give a bilinear function from the cartesian product $A\times \ZZ_m$ to the quotient group $A/mA$. Then we invoke theorem IV.5.2 and get a homomorphism between the tensor product $A\otimes \ZZ_m$ and $A/mA$; which we proceed to prove is in a fact an isomorphism.
+\item First we give a bilinear function from the cartesian product $A\times \ZZ_m$ to the quotient group $A/mA$. Then we invoke theorem IV.5.2 and get a homomorphism between the tensor product $A\otimes \ZZ_m$ and $A/mA$; which we proceed to prove is in fact an isomorphism.
 
     Let the function $f\from A\times \ZZ_m\to A/mA$ be defined by $$f(a,k+m\ZZ) = ka+mA$$
     Note $f$ is well defined...
@@ -16,10 +16,21 @@
     \begin{enumerate}[(a)]
         \item For any tensor $a\otimes p/q \in A\otimes \QQ$, where $|a|=n$:
             $$a\otimes \frac pq = n\,a\otimes \frac p{n\,q} = 0$$
-            So this can be done to any coset $\sum r_i(a_i\otimes p_i/q_i$).
+            So this can be done to any coset $\sum r_i(a_i\otimes p_i/q_i)$.
         \item $1\otimes Id $ is an epimorphism we only need to prove $\QQ\otimes \QQ \xrightarrow{f} \QQ \to 0$ is also a monomorphism.
     \end{enumerate}
 \item[IV.5.4]
+    \begin{enumerate}[(a)]
+        \item Take $\ZZ_2\otimes_{\ZZ_2} A$ where $A$ is the additive group $\ZZ$ together with the \emph{trivial} $\ZZ_2$-module structure i.e. $(\forall x\in \ZZ_2)(\forall y\in A)(x\,y=0)$. Note that:
+            $$z\otimes y = (1z)\otimes y = z \otimes 1y = 0$$
+            This means: $\ZZ_2\otimes_{\ZZ_2} A\cong {0}$. On the other hand $\ZZ_2\otimes_{\ZZ} \ZZ\cong\ZZ_2$
+        \item Let $A,B$ be the additive groups of linear expressions over the reals in the variables $x,y$ respectively. We consider the product $A\otimes_\RR B$. The basis has the form:
+            $$(a+b\,x)(c+d\,y)=a\,c + b\,c\,x + a\,d\,y + b\,d\,x\,y$$
+            Although the following is in the tensor product:
+            $$1+xy= (1+x)(1+y) - x - y$$
+            There is no one simple tensor that can equal $1+xy$ as this would imply $a\,c=1$ and $b\,d=1$, meaning all these coefficients are non-zero.
+        \item In $\ZZ_5\otimes_\ZZ \ZZ_7$ we know that $2\otimes 5=0\otimes 0$ for example.
+    \end{enumerate}
 \item[IV.5.7]
 \item[IV.5.8]
 \item[IV.5.9]
