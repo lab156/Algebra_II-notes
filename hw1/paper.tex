@@ -1,16 +1,30 @@
+\textbf{Algebra II Assignment 1 \hspace{\fill} Luis Berlioz}
 \begin{description}
 \item[IV.5.2] Let $A$ and $B$ be abelian groups.
 \begin{enumerate}[(a)]
 \item First we give a bilinear function from the cartesian product $A\times \ZZ_m$ to the quotient group $A/mA$. Then we invoke theorem IV.5.2 and get a homomorphism between the tensor product $A\otimes \ZZ_m$ and $A/mA$; which we proceed to prove is in fact an isomorphism.
 
     Let the function $f\from A\times \ZZ_m\to A/mA$ be defined by $$f(a,k+m\ZZ) = ka+mA$$
-    Note $f$ is well defined...
+    Note $f$ is well defined because the only source of ambiguity is the representative of the coset of $\ZZ_m$. So let $k=k'+mq$ for any integer $q$ then:
+    $$f(a,k' + m\ZZ) = ka - mqa+mA=ka+mA = f(a,k+m\ZZ)$$
 
-    Also $f$ is bilinear...
+    Also, $f$ is bilinear. To see this:
+    \begin{gather*}
+        f(a+b,k+m\ZZ)=ka + kb +mA =f(a,k+m\ZZ)+f(b,k+m\ZZ)\\
+        f(na,k+m\ZZ) = nka+m\ZZ = f(a,nk+m\ZZ)
+    \end{gather*}
 
-    Using theorem IV.5.2 get $\bar f$ which is a homomorphism from $f\from A\otimes Z_m \to A/mA$...
-\item By the preceding statement, $A= \ZZ_m$... (prove for m=0)
-\item $A\otimes B=(\ZZ^n\oplus\ZZ_{p_1}\oplus \ldots \oplus \ZZ_{p_t})\otimes(\ZZ^n\oplus\ZZ_{q_1}\oplus \ldots \oplus \ZZ_{q_t})$
+    Using theorem IV.5.2 get $\alpha$ which is a homomorphism from $\alpha \from A\otimes Z_m \to A/mA$. Now $ \alpha$ is onto and has inverse $\beta(a+mA)=a\otimes 1$. To prove this note:
+    $$\beta(a + mb) = a\otimes 1 + b\otimes 1$$
+    so $\beta$ is well defined, and
+    $$\beta(\alpha(a\otimes k)) = \beta(ka) = ka\otimes 1 = a\otimes k$$
+\item By the preceding statement, $A= \ZZ_m$ we only have to prove:
+    $$\frac{\ZZ_n}{m\ZZ_n} \cong \ZZ_c$$
+   I'll do this by proving $m\ZZ_n \cong c\ZZ_n$: this is the case because
+   $$n\ZZ \subset c\ZZ \subset \ZZ$$
+   are nested abelian groups. The third isomorphism theorem gives the desired result.
+\item Decomposing into elementary divisors $$A\otimes B=(\ZZ^n\oplus\ZZ_{p_1}\oplus \ldots \oplus \ZZ_{p_t})\otimes(\ZZ^n\oplus\ZZ_{q_1}\oplus \ldots \oplus \ZZ_{q_t})$$
+    And using the result above, and theorem IV.5.9 the tensor product turns out to be another finitely generated abelian group.
 \end{enumerate}
 \item[IV.5.3]
     \begin{enumerate}[(a)]
@@ -31,7 +45,17 @@
             There is no one simple tensor that can equal $1+xy$ as this would imply $a\,c=1$ and $b\,d=1$, meaning all these coefficients are non-zero.
         \item In $\ZZ_5\otimes_\ZZ \ZZ_7$ we know that $2\otimes 5=0\otimes 0$ for example.
     \end{enumerate}
-\item[IV.5.7]
+\item[IV.5.7] We prove by direct computation. First note that $0\otimes 0 = 0\otimes 1 = 1\otimes 0$ so the only element left to check is $1\otimes 1$.
+    $$(1\otimes\alpha)(1\otimes 1) = 1\otimes 2 = 0\otimes 1$$
 \item[IV.5.8]
+    In all three cases, that $D\otimes B \xrightarrow{1\otimes f} D\otimes C \to 0$ is exact is given by theorem IV.5.4; so all that is left to prove is that $1\otimes_R f$ is a monomorphism.
+    \begin{enumerate}[(a)]
+        \item If $0\to A \xrightarrow{f} B\xrightarrow{g} C \to 0$ then by theorem IV.1.18, $B\cong A\oplus C$  Now $D\otimes B\cong (D\otimes A)\oplus(D\otimes C)$ and call the isomorphism $\phi$. and $1\otimes f = \phi \circ \imath$. 
+        \item Since $D$ is free with identity, it can be written as the internal sum of spaces of the form $\bigoplus_{j\in J} Rj$ where $J$ is a base of $D$. Then $1\otimes f$ maps injectively like so:
+            $$1\otimes f : \bigoplus_{j\in J} Rj\otimes A \to \bigoplus_{j\in J} Rj\otimes B$$
+            And using that $R\otimes A(\text{ or } B)$ becomes a unitary  $R$-module we can establish that $1_R\otimes f\from R\otimes A \to R\otimes B$ injectively.
+        \item 
+
+    \end{enumerate}
 \item[IV.5.9]
 \end{description}
