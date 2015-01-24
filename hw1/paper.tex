@@ -59,18 +59,27 @@
     \end{enumerate}
 \item[IV.5.9]
     \begin{enumerate}[(a)]
-        \item Let the function $\alpha'\from \frac RI \times B$ be defined by $\alpha'(r+I,b) = rb + IB$. In order to use the universal property of tensors, we first show that $\alpha'$ is bilinear:
+        \item We'll prove by the usual way of using the \emph{universal property of tensor product}. Start by finding a bilinear map:
+            Let the function $f\from \frac RI \times B$ be defined by $f(r+I,b) = rb + IB$. 
+            Indeed, it is well-defined, note that the only ``source of ambiguity'' is the element of the coset $r+I$ we choose. Take $r'= r+j$ where $j\in I$ and $r,r'\in R$, then:
+            $$f(r',b) = (r+j)b + IB = f(r,b)$$
+            The following  shows that the function is bilinear:
             \begin{gather*}
-                \alpha'(r+r',b) = (r+r')b+ IB = \alpha'(r,b) + \alpha'(r',b)\\
-                \alpha'(ra ,b) = (ra)b +IB = r(ab) +IB=\alpha'(r,b)
+                f(r+r',b) = (r+r')b +IB = rb+r'b +IB\\
+                f(r,b+b') = r(b+b') +IB = rb+rb' +IB\\
+                f(r,a\, b) = r\, a\, b +IB = f(r\, a, b) \text{ This is where we might use the right ideal part.}
             \end{gather*}
-            Now we have a map $\alpha\from \frac RI \otimes_R B \to \frac B{IB}$. Need to show $\alpha$ is well-defined. 
+            The time has now come to make $\bar f \from \frac RI\otimes_R B \to \frac B{IB}$ using  the \emph{universal property of tensor products}. We know $\bar f$ is unique and a group homomorphism.
 
-            To show this, first we do it on simple tensors, the only source of ambiguity are the cosets in $\frac RI$. Thus, take $r'=r+j$ for $r,r' \in R$ and $j\in I$. then:
-            $$ \alpha(r'\otimes b) = rb + jb + IB = rb$$
-            With this take any tensor $\sum \bar r_i\otimes b_i=\sum \bar r'_i\otimes b'_i$ where $\bar r = r + I$
-            $$\sum \alpha(\bar r'_i\otimes b'_i)=\sum  \bar r_i b'_i + IB = \sum\alpha(\bar r_i \otimes b_i) $$ 
-Que hiedo!!            
+            The next step is to propose an \emph{inverse map}. Mine will be $g(b+IB) = (1_R+I)\otimes b$ of course $g$ has to map like so:
+            $$g\from \frac B{IB} = \frac RI\otimes_R B$$
+            In order to show that $g$ is \emph{well-defined} and a group homomorphism. To see the first one, we take two elements of the same coset of $\frac B{IB}$ so that $b'=b+jb_2$ where $j\in IB$ then (with $\pi$ as usual):
+            $$g\pi(b') = (1_R+I)\otimes_R (b+jb_2) = (1_R+I)\otimes_R b +(1_R+I)\otimes_R(jb_2)$$
+            the last term in the sum is equivalent to 0 since if we pass $j$ to the other component of the tensor product, $(1_Rj+I)\otimes_R b_2=0\otimes_r 0$.
 
+            To show that $g$ is a \emph{group homomorphism}, we note that, by definition, the tensor product ``respects'' the group operation in $\frac B{IB}$.
+
+            Finally, note that for any coset $b+IB$:
+            $$\bar f g(b+IB)=\bar f((1+I)\otimes b)= 1_Rb+IB$$
     \end{enumerate}
 \end{description}
