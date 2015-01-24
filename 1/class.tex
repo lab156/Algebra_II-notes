@@ -1,0 +1,22 @@
+The concept of a ring can be interpreted as the result of looking an additive group together with the set of its Endomorphisms (which is a semigroup). For example, multiplication in $\ZZ$ can be interpreted as: $\ZZ=\hom(\ZZ,\ZZ)$.
+
+The same point can be made when defining a module $M$ over a ring $R$:
+$$ R\xrightarrow{\phi} \hom(M,M)\quad r\mapsto \phi_r$$
+Using this ``notation'' the definition looks like:
+\begin{itemize}
+\item The distributives $r(m+n)=rm+rn$ and $(r+s)m = rm+sm$ become:
+$$\phi_r(m+n) = \phi_r(m) + \phi_r(n)$$
+by definition since $\phi$ is a hom.
+\item The associativity is also a result of the properties of homs.
+$$(\phi_s\circ \phi_r)(m) = \phi_s(\phi_r(m))$$
+\end{itemize}
+
+\begin{ddef}[Projective $R$-modules]
+Let $P$ be  an $R$-module, say $P$ is \emph{projective} iff:
+$$(\forall f\from A \twoheadrightarrow B)(\forall g\from P\to B)(\exists h\from P\to A \text{ s.t. } g=fh )$$
+\[\xymatrix{
+            &  P\ar[d]^g\ar@{-->}[dl]_h &       \\
+A \ar[r]^f  &  B \ar[r]          & 0     } \]
+\end{ddef}
+
+We want to know what 
