@@ -58,4 +58,19 @@
 
     \end{enumerate}
 \item[IV.5.9]
+    \begin{enumerate}[(a)]
+        \item Let the function $\alpha'\from \frac RI \times B$ be defined by $\alpha'(r+I,b) = rb + IB$. In order to use the universal property of tensors, we first show that $\alpha'$ is bilinear:
+            \begin{gather*}
+                \alpha'(r+r',b) = (r+r')b+ IB = \alpha'(r,b) + \alpha'(r',b)\\
+                \alpha'(ra ,b) = (ra)b +IB = r(ab) +IB=\alpha'(r,b)
+            \end{gather*}
+            Now we have a map $\alpha\from \frac RI \otimes_R B \to \frac B{IB}$. Need to show $\alpha$ is well-defined. 
+
+            To show this, first we do it on simple tensors, the only source of ambiguity are the cosets in $\frac RI$. Thus, take $r'=r+j$ for $r,r' \in R$ and $j\in I$. then:
+            $$ \alpha(r'\otimes b) = rb + jb + IB = rb$$
+            With this take any tensor $\sum \bar r_i\otimes b_i=\sum \bar r'_i\otimes b'_i$ where $\bar r = r + I$
+            $$\sum \alpha(\bar r'_i\otimes b'_i)=\sum  \bar r_i b'_i + IB = \sum\alpha(\bar r_i \otimes b_i) $$ 
+            
+
+    \end{enumerate}
 \end{description}
