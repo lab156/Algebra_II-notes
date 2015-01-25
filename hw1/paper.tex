@@ -80,6 +80,10 @@
             To show that $g$ is a \emph{group homomorphism}, we note that, by definition, the tensor product ``respects'' the group operation in $\frac B{IB}$.
 
             Finally, note that for any coset $b+IB$:
-            $$\bar f g(b+IB)=\bar f((1+I)\otimes b)= 1_Rb+IB$$
+            $$\bar f g(b+IB)=\bar f((1+I)\otimes b)=\begin{cases}
+                b+IB & b\in 1_RB\\ 
+                IB & b \in \ker B
+            \end{cases}$$
+            by the claim above we note that $1_Rb$ is either 0 or $b$; in any case 
     \end{enumerate}
 \end{description}
