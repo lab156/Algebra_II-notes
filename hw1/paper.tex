@@ -51,11 +51,22 @@
     In all three cases, that $D\otimes B \xrightarrow{1\otimes f} D\otimes C \to 0$ is exact is given by theorem IV.5.4; so all that is left to prove is that $1\otimes_R f$ is a monomorphism.
     \begin{enumerate}[(a)]
         \item If $0\to A \xrightarrow{f} B\xrightarrow{g} C \to 0$ then by theorem IV.1.18, $B\cong A\oplus C$  Now $D\otimes B\cong (D\otimes A)\oplus(D\otimes C)$ and call the isomorphism $\phi$. and $1\otimes f = \phi \circ \imath$. 
-        \item Since $D$ is free with identity, it can be written as the internal sum of spaces of the form $\bigoplus_{j\in J} Rj$ where $J$ is a base of $D$. Then $1\otimes f$ maps injectively like so:
+        \item First we need to state a small result\footnote{Thanks to MATHSTACKEXCHANGE LINKNGOES HERE} used below to justify why the result is true \textbf{even though $R$ is not unitary}: \\
+            \textbf{Claim:} Let $R$ be a ring with unit $1_R$. And $A$ be an $R$-module; then, $A=1_RA\oplus \ker 1_R$\\
+            First check that $1_RA\cap \ker 1_R= 0$: If say $x$ is in the intersection, then $x=1_Ry$ and $1_Rx=0$; thus $1_Rx=1_R^2y=1_Ry =0$. Also any element in $R$ can be written as $x=1_Rx + (x-1_Rx)$.
+
+            Now we are ready to go. Assume that:
+            $$0\to A \xrightarrow{f} B$$
+            The composition $f\circ 1_R$ is still injective
+            $$0\to 1_RA \xrightarrow{f\circ 1_R} 1_RB$$
+            The claim above implies that $R\otimes A\cong R\otimes(1_RA\oplus \ker 1_R)\cong R\otimes 1_R A$. Since $D$ is free, it can be written as the internal sum of spaces of the form $\bigoplus_{j\in J} R$ where $J$ is a base of $D$. Then $Id\otimes f$ maps injectively like so:
             $$1\otimes f : \bigoplus_{j\in J} Rj\otimes A \to \bigoplus_{j\in J} Rj\otimes B$$
             And using that $R\otimes A(\text{ or } B)$ becomes a unitary  $R$-module we can establish that $1_R\otimes f\from R\otimes A \to R\otimes B$ injectively.
-        \item 
-
+        \item Since $D$ is projective, there exists $R$-modules $K$ and $F$ the last one free; such that $F= D\oplus K$. Assuming that $f$ is injective:
+            $$0\to F\otimes A \xrightarrow{1\otimes f} F\otimes B$$
+            Is an exact sequence. Decomposing $F$ into $D$ and $K$ and selecting only the the $D$ components we see that:
+            $$0\to D\otimes A \xrightarrow{1\otimes f} D\otimes B$$
+            Is also injective.
     \end{enumerate}
 \item[IV.5.9]
     \begin{enumerate}[(a)]
@@ -84,6 +95,22 @@
                 b+IB & b\in 1_RB\\ 
                 IB & b \in \ker B
             \end{cases}$$
-            by the claim above we note that $1_Rb$ is either 0 or $b$; in any case 
+            so in any case, $b+IB$ is the same coset as either $1_Rb_IB$ or $IB$. Checking the other order:
+            $$g\bar f((r+I)\otimes_R b) = g(rb+IB)=(1+I)\otimes_R(rb)$$
+            Thus $\bar f$ and $g$ are each other's inverses. 
+        \item Again we proceed using the \emph{universal property of tensor product}. For our bilinear map on $\frac RI\times \frac RJ$, take: $f(r+I,s+J)=rs+I+J$. $f$ is clearly bilinear, so we check its \emph{well-defined}. As usual, suppose that $r'=r+i$ and $s'=s+j$ are equivalent modulo $I$ and $J$ respectively. Then:
+            $$f(r'+I,s'+J)= r's'+I+J=rs+is+jr +ij+I_+J= rs+I+J$$
+            We call $\bar f: \frac RI \otimes_R RJ \to \frac R{I+J}$ with $\bar f((r+I) \otimes (s+J))=rs+I+J$ the unique homomorphism. As the inverse we will use $g(r+I+J) = (r+I)\otimes (1+J)$ note that there is no ambiguity on the side we choose since:
+            $$(r+I)\otimes (1+J) = (1+I)\otimes(r+J)$$
+            Also, $g$ is well-defined: take two equivalent elements $r' = r+i+j$ where $r,r'\in R,\ i\in I,\ j\in J$ then:
+            $$g\pi(r')=(r+j+I)\otimes (1+J)=(1+I)\otimes (r+J)$$
+            Lastly, we show that $g$ and $\bar f$ are inverse maps:
+            $$\bar fg(r+I+J) = \bar f((r+I)\otimes(1+J))=r+I+J$$
+            And,
+            $$g\bar f((r+I)\otimes (s+j))= g(rs+I+J)=(rs+I)\otimes(1+J) = (r+I)\otimes(s+J)$$
+
+            \textbf{remark:} This last result is false in a ``RNG''; for instance take $R=2\ZZ$ and $I=J=4\ZZ$, note that in $2\ZZ/4\ZZ$ all products are equal to zero thus:
+            $$\frac {2\ZZ}{4\ZZ}\otimes {2\ZZ}{4\ZZ} = 0$$
+            Nevertheless, $2\ZZ/4\ZZ$ is not the trivial ring.
     \end{enumerate}
 \end{description}
