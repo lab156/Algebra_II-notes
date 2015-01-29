@@ -1,0 +1,116 @@
+\textbf{Algebra II Assignment 1 \hspace{\fill} Luis Berlioz}
+\begin{description} \itemindent-9pt 
+\item[IV.5.2] Let $A$ and $B$ be abelian groups.
+\begin{enumerate}[(a)]
+\item First we give a bilinear function from the cartesian product $A\times \ZZ_m$ to the quotient group $A/mA$. Then we invoke theorem IV.5.2 and get a homomorphism between the tensor product $A\otimes \ZZ_m$ and $A/mA$; which we proceed to prove is in fact an isomorphism.
+
+    Let the function $f\from A\times \ZZ_m\to A/mA$ be defined by $$f(a,k+m\ZZ) = ka+mA$$
+    Note $f$ is well defined because the only source of ambiguity is the representative of the coset of $\ZZ_m$. So let $k=k'+mq$ for any integer $q$ then:
+    $$f(a,k' + m\ZZ) = ka - mqa+mA=ka+mA = f(a,k+m\ZZ)$$
+
+    Also, $f$ is bilinear. To see this:
+    \begin{gather*}
+        f(a+b,k+m\ZZ)=ka + kb +mA =f(a,k+m\ZZ)+f(b,k+m\ZZ)\\
+        f(na,k+m\ZZ) = nka+m\ZZ = f(a,nk+m\ZZ)
+    \end{gather*}
+
+    Using theorem IV.5.2 get $\alpha$ which is a homomorphism from $\alpha \from A\otimes Z_m \to A/mA$. Now $ \alpha$ is onto and has inverse $\beta(a+mA)=a\otimes 1$. To prove this note:
+    $$\beta(a + mb) = a\otimes 1 + b\otimes 1$$
+    so $\beta$ is well defined, and
+    $$\beta(\alpha(a\otimes k)) = \beta(ka) = ka\otimes 1 = a\otimes k$$
+\item By the preceding statement, $A= \ZZ_m$ we only have to prove:
+    $$\frac{\ZZ_n}{m\ZZ_n} \cong \ZZ_c$$
+   I'll do this by proving $m\ZZ_n \cong c\ZZ_n$: this is the case because
+   $$n\ZZ \subset c\ZZ \subset \ZZ$$
+   are nested abelian groups. The third isomorphism theorem gives the desired result.
+\item Decomposing into elementary divisors $$A\otimes B=(\ZZ^n\oplus\ZZ_{p_1}\oplus \ldots \oplus \ZZ_{p_t})\otimes(\ZZ^n\oplus\ZZ_{q_1}\oplus \ldots \oplus \ZZ_{q_t})$$
+    And using the result above, and theorem IV.5.9 the tensor product turns out to be another finitely generated abelian group.
+\end{enumerate}
+\item[IV.5.3]
+    \begin{enumerate}[(a)]
+        \item For any tensor $a\otimes p/q \in A\otimes \QQ$, where $|a|=n$:
+            $$a\otimes \frac pq = n\,a\otimes \frac p{n\,q} = 0$$
+            So this can be done to any coset $\sum r_i(a_i\otimes p_i/q_i)$.
+        \item $1\otimes Id $ is an epimorphism we only need to prove $\QQ\otimes \QQ \xrightarrow{f} \QQ \to 0$ is also a monomorphism.
+    \end{enumerate}
+\item[IV.5.4]
+    \begin{enumerate}[(a)]
+        \item Take $\ZZ_2\otimes_{\ZZ_2} A$ where $A$ is the additive group $\ZZ$ together with the \emph{trivial} $\ZZ_2$-module structure i.e. $(\forall x\in \ZZ_2)(\forall y\in A)(x\,y=0)$. Note that:
+            $$z\otimes y = (1z)\otimes y = z \otimes 1y = 0$$
+            This means: $\ZZ_2\otimes_{\ZZ_2} A\cong {0}$. On the other hand $\ZZ_2\otimes_{\ZZ} \ZZ\cong\ZZ_2$
+        \item Let $A,B$ be the additive groups of linear expressions over the reals in the variables $x,y$ respectively. We consider the product $A\otimes_\RR B$. The basis has the form:
+            $$(a+b\,x)(c+d\,y)=a\,c + b\,c\,x + a\,d\,y + b\,d\,x\,y$$
+            Although the following is in the tensor product:
+            $$1+xy= (1+x)(1+y) - x - y$$
+            There is no one simple tensor that can equal $1+xy$ as this would imply $a\,c=1$ and $b\,d=1$, meaning all these coefficients are non-zero.
+        \item In $\ZZ_5\otimes_\ZZ \ZZ_7$ we know that $2\otimes 5=0\otimes 0$ for example.
+    \end{enumerate}
+\item[IV.5.7] We prove by direct computation. First note that $0\otimes 0 = 0\otimes 1 = 1\otimes 0$ so the only element left to check is $1\otimes 1$.
+    $$(1\otimes\alpha)(1\otimes 1) = 1\otimes 2 = 0\otimes 1$$
+\item[IV.5.8]
+    In all three cases, that $D\otimes B \xrightarrow{1\otimes f} D\otimes C \to 0$ is exact is given by theorem IV.5.4; so all that is left to prove is that $1\otimes_R f$ is a monomorphism.
+    \begin{enumerate}[(a)]
+        \item If $0\to A \xrightarrow{f} B\xrightarrow{g} C \to 0$ is split exact, then by theorem IV.1.18, $B\cong A\oplus C$  Now $D\otimes B\cong (D\otimes A)\oplus(D\otimes C)$ and call the isomorphism between the two $\phi$. And $1\otimes f = \phi \circ \imath$ (where $\imath\from D\otimes A \to (D\otimes A)\oplus (D\otimes C)$).
+        \item First we need to state a small result\footnote{Used help from: http://math.stackexchange.com/questions/464000/non-unital-module-over-a-ring-with-identity} used below to justify why the result is true \textbf{even though $R$ is not unitary}: \\
+            \textbf{Claim:} Let $R$ be a ring with unit $1_R$. And $A$ be an $R$-module; then, $A=1_RA\oplus \ker 1_R$\\
+            First check that $1_RA\cap \ker 1_R= 0$: If say $x$ is in the intersection, then $x=1_Ry$ and $1_Rx=0$; thus $1_Rx=1_R^2y=1_Ry =0$. Also any element in $R$ can be written as $x=1_Rx + (x-1_Rx)$.
+
+            Now we are ready to go. Assume that:
+            $$0\to A \xrightarrow{f} B$$
+            The composition $f\circ 1_R$ is still injective
+            $$0\to 1_RA \xrightarrow{f\circ 1_R} 1_RB$$
+            The claim above implies that $R\otimes A\cong R\otimes(1_RA\oplus \ker 1_R)\cong R\otimes 1_R A$. Since $D$ is free, it can be written as the internal sum of spaces of the form $\bigoplus_{j\in J} R$ where $J$ is a base of $D$. Then $Id\otimes f$ maps injectively like so:
+            $$Id\otimes f : \bigoplus_{j\in J} Rj\otimes A \to \bigoplus_{j\in J} Rj\otimes B$$
+            And using that  that $Id\otimes f\from R\otimes A \to R\otimes B$ injectively, we can establish the result.
+        \item Since $D$ is projective, there exists $R$-modules $K$ and $F$ the last one free; such that $F= D\oplus K$. Assuming that $f$ is injective:
+            $$0\to F\otimes A \xrightarrow{1\otimes f} F\otimes B$$
+            Is an exact sequence. Decomposing $F$ into $D$ and $K$ and selecting only the $D$ components we see that:
+            $$0\to D\otimes A \xrightarrow{1\otimes f} D\otimes B$$
+            Is also injective.
+    \end{enumerate}
+\item[IV.5.9]
+    \begin{enumerate}[(a)]
+        \item We'll prove using the \emph{universal property of tensor product}. Start by finding a bilinear map:
+            Let the function $f\from \frac RI \times B$ be defined by $f(r+I,b) = rb + IB$. 
+            Indeed, it is well-defined, note that the only ``source of ambiguity'' is the element of the coset $r+I$ we choose. Take $r'= r+j$ where $j\in I$ and $r,r'\in R$, then:
+            $$f(\pi r',b) = (r+j)b + IB = f(\pi r,b)$$
+            The following  shows that the function is bilinear:
+            \begin{gather*}
+                f(r+r',b) = (r+r')b +IB = rb+r'b +IB\\
+                f(r,b+b') = r(b+b') +IB = rb+rb' +IB\\
+                f(r,a\, b) = r\, a\, b +IB = f(r\, a, b) 
+            \end{gather*}
+ The last one  being  where we use the right ideal part.. The time has now come to make $\bar f \from \frac RI\otimes_R B \to \frac B{IB}$ using  the \emph{universal property of tensor products}. We know $\bar f$ is unique and a group homomorphism.
+
+            The next step is to propose an \emph{inverse map}. Mine will be $g(b+IB) = (1_R+I)\otimes b$ of course $g$ has to map like so:
+            $$g\from \frac B{IB} = \frac RI\otimes_R B$$
+            In order to show that $g$ is \emph{well-defined} and a group homomorphism. To see the first one, we take two elements of the same coset of $\frac B{IB}$ so that $b'=b+jb_2$ where $j\in IB$ then (with $\pi$ as usual):
+            $$g\pi(b') = (1_R+I)\otimes_R (b+jb_2) = (1_R+I)\otimes_R b +(1_R+I)\otimes_R(jb_2)$$
+            the last term in the sum is equivalent to 0 since if we pass $j$ to the other component of the tensor product, $(1_Rj+I)\otimes_R b_2=0\otimes_r 0$.
+
+            To show that $g$ is a \emph{group homomorphism}, we note that, by definition, the tensor product ``respects'' the group operation in $\frac B{IB}$.
+
+            Finally, note that for any coset $b+IB$:
+            $$\bar f g(b+IB)=\bar f((1+I)\otimes b)=\begin{cases}
+                b+IB & b\in 1_RB\\ 
+                IB & b \in \ker B
+            \end{cases}$$
+            so in any case, $b+IB$ is the same coset as either $1_Rb_IB$ or $IB$. Checking the other order:
+            $$g\bar f((r+I)\otimes_R b) = g(rb+IB)=(1+I)\otimes_R(rb)$$
+            Thus $\bar f$ and $g$ are each other's inverses. 
+        \item Again we proceed using the \emph{universal property of tensor product}. For our bilinear map on $\frac RI\times \frac RJ$, take: $f(r+I,s+J)=rs+I+J$. $f$ is clearly bilinear, so we check it is \emph{well-defined}. As usual, suppose that $r'=r+i$ and $s'=s+j$ are equivalent modulo $I$ and $J$ respectively. Then:
+            $$f(r'+I,s'+J)= r's'+I+J=rs+is+jr +ij+I+J= rs+I+J$$
+            We call $\bar f: \frac RI \otimes_R RJ \to \frac R{I+J}$ with $\bar f((r+I) \otimes (s+J))=rs+I+J$ the unique homomorphism. As the inverse we will use $g(r+I+J) = (r+I)\otimes (1+J)$ note that there is no ambiguity on the side we choose to put the $r$ since:
+            $$(r+I)\otimes (1+J) = (1+I)\otimes(r+J)$$
+            Also, $g$ is well-defined: take two equivalent elements $r' = r+i+j$ where $r,r'\in R,\ i\in I,\ j\in J$ then:
+            $$g\pi(r')=(r+j+I)\otimes (1+J)=(1+I)\otimes (r+J)$$
+            Lastly, we show that $g$ and $\bar f$ are inverse maps:
+            $$\bar fg(r+I+J) = \bar f((r+I)\otimes(1+J))=r+I+J$$
+            And,
+            $$g\bar f((r+I)\otimes (s+j))= g(rs+I+J)=(rs+I)\otimes(1+J) = (r+I)\otimes(s+J)$$
+
+            \textbf{remark:} This last result is false in a ``RNG''; for instance take $R=2\ZZ$ and $I=J=4\ZZ$, note that in $2\ZZ/4\ZZ$ all products are equal to zero thus:
+            $$\frac {2\ZZ}{4\ZZ}\otimes_\ZZ \frac{2\ZZ}{4\ZZ} = 0$$
+            Nevertheless, $2\ZZ/4\ZZ$ is not the trivial ring.
+    \end{enumerate}
+\end{description}

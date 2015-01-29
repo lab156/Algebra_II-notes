@@ -12,3 +12,5 @@ $(LatexFile).pdf: $(LatexFile).tex $(DEPS)
 	grep -q "Rerun to get cross" $(LatexFile).log ) do true; \
 	done
 
+clean: 
+	$(RM) *.aux *.log *.nav *.out *.snm *.toc  
