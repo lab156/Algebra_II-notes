@@ -1,4 +1,15 @@
 \problem{3}
 First note that $K[u_1,\ldots ,u_n]$ is an integral domain, this is a requisite in order for the quotient field (fraction field) to be defined. 
 
+\problem{6}
 
+\problem{7}
+That $v$ is algebraic over $K(u)$ means the is a polynomial $f\in K(u)[x]$ such that:
+$$f(v) = \sum_{k=0}^n \frac{g_k(u)}{h_k(u)} v^k=0$$
+Where $g_k,h_k$ are polynomials with coefficients in $K$. 
+Note that $h_k(u)\neq 0$ and thus we can clear denominators by multiplying by the \emph{lcm} of the $h_k$ on both sides to get:
+$$\lcm\{h_k(x)\}\big|_{x=u}f(v) = \sum_{k=0}^n G_k(u) v^k =0$$
+Where the $G_k$ are polynomials with coefficients in $K$. Multiplying and regrouping we get:
+$$\sum_{k=0}^n J_k(v) u^k = \sum_{k=0}^n G_k(u) v^k =0$$
+Where the $J_k$ are polynomials with coefficients in $K$.
+\problem{8}
