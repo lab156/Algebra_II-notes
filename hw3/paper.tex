@@ -1,7 +1,17 @@
+\noindent\textbf{Algebra II Assignment 3 \hspace{\fill} Luis Berlioz}
 \problem{3}
-First note that $K[u_1,\ldots ,u_n]$ is an integral domain, this is a requisite in order for the quotient field (fraction field) to be defined. 
+First note that $K[u_1,\ldots ,u_n]$ is an integral domain, this is a requisite in order for the quotient field (fraction field) to be defined. Thus (with theorem III.4.3) we know both the quotient ring of $K[u_1,\ldots, u_n]$ and $K(u_1,\ldots, u_n)$ are fields.
+
+Let $S$ be the non-zero elements of $K[u_1,\ldots, u_n]$ then
+ $$\phi\from K(u_1,\ldots, u_n) \to S^{-1}K[u_1,\ldots, u_n]$$ 
+Defined  by $\phi(f/g)= [(f,g)]$  is clearly a well-defined, bijective relation among the two set.
 
 \problem{6}
+If $f(x_1,\ldots,x_n)/g(x_1,\ldots,x_n)\in K(x_1,\ldots,x_n)-K$ and algebraic over $K$, then there exists $h\in K[x]$ such that:
+$$h\left(f(x_1,\ldots,x_n)/g(x_1,\ldots,x_n)\right) =0$$
+This implies:
+$$h\left(f(x_1,\ldots,x_n)\right) =0$$
+And this would imply that at least one of the $x_1$ is constant/algebraic (this is a contradiction since the $x_i$ can be algebraic).
 
 \problem{7}
 That $v$ is algebraic over $K(u)$ means the is a polynomial $f\in K(u)[x]$ such that:
@@ -13,3 +23,40 @@ Where the $G_k$ are polynomials with coefficients in $K$. Multiplying and regrou
 $$\sum_{k=0}^n J_k(v) u^k = \sum_{k=0}^n G_k(u) v^k =0$$
 Where the $J_k$ are polynomials with coefficients in $K$.
 \problem{8}
+First note that: $[K(u^2,u):K(u^2)]$ can be equal to 1 or 2 since the polynomial $x^2-u^2$ is in $K(u^2)[x]$. Also, $K(u^2,u) =K(u)$ since $u^2 \in K(u)$. By hypothesis and by the order of nested fields:
+$$[K(u):K(u^2)][K(u^2):K] = 2n+1$$
+This leaves $[K(u):K(u^2)]=1$ and $[K(u^2):K]=2n+1$ as the only option. From the first we conclude that $u\in K(u^2)$ and from the second equation that $u^2$ is algebraic over $K$.
+\problem{10}
+$D$ is an integral domain, so it is already commutative. It is also a ring with identity since $1\in K \implies 1 \in D$. All that is left is to prove every element has an inverse. 
+
+Let $u\in D$, then $1/u \in F$. All $F$ is algebraic over $K$; then there is a basis of $K(u)$ whose elements are a finite number of powers of $u$. Specifically:
+$$1/u = a_0 + a_1 u+\ldots a_n u^n$$
+Note that all coefficients and powers of $u$ are elements of $D$ and:
+$$(a_0 + a_1 u+\ldots a_n u^n)u = 1$$
+In an integral domain, there is unique solution to this equation since all elements contitute an injective ring homomorphism. $\therefore 1/u\in D$.
+
+\problem{13}
+\begin{enumerate}[(a)]
+\item The polynomial $x^3-6x^2+9x+3$ can be checked to be irreducible in $\QQ$ using the Eisenstein's Criterion with prime $p=3$. 
+\end{enumerate}
+
+\problem{17}
+For a polynomial of order two, take:
+$$f(x) = x^2+x+1$$
+To check it is irreducible, note that $f(0) =1$ and $f(1)=1$. The extension by the root has the form $\omega = b_1 + b_2 u$ where $b_1,b_2\in \ZZ_2$ and $u$ is the root of the polynomial above.
+
+For a polynomial of order three, take:
+$$f(x) = x^3+x+1$$
+To check it is irreducible, note that $f(0) =1$ and $f(1)=1$. The extension by the root has the form $\omega = b_1 + b_2 u + b_3 u^2$ where $b_1,b_2,b_3\in \ZZ_2$ and $u$ is the root of the polynomial above.
+
+\problem{18}
+\begin{enumerate}[(a)]
+\item Take $n=0$.
+\item If $r\in \QQ$ then it is the root of a monic polynomial of degree one with coefficients in $\ZZ$, then the only root has to be an integer.
+\item Take $f$ to be a monic polynomial with integer coefficients such that $f(u)=0$. Note that by synthetic division 
+$$f(x) = (x+n)g(x) + f(-n)$$
+Where $g$ has integer coefficients. Also note that:
+$$0=f(u)=(u+n)g(u) +f(-n)$$
+This means that $xg(x-n) + f(-n)$ has a root at $x=u+n$. And, $g(x-n)$ is still a polynomial with integer coefficients.
+\item  This can be done by with Field extensions, noticing that all algebraic integers have finite order over $\QQ$. And that if for example $\QQ(u)$ has a certain basis $\{1,\ldots,u^{n-1}\}$, and $\QQ(v)$ has the basis $\{1,\ldots,v^{m-1}\}$ then the sets $\{1,\ldots,u^{n-1}v^{m-1}\}$ generates both $\QQ(u+v)$ and $\QQ(uv)$.
+\end{enumerate}
