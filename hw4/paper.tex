@@ -1,6 +1,24 @@
 \problem{V.1.19}
 First we review that at most $mn$ terms will be needed to generate $K(u,v)$.
+Any element in $a_j\in K(u)$ is of the form:
+$$a_j = \sum_{i=0}^{m-1} b_{ij} u^i$$
+Where $m=[K(u):K]$ and $b_{ij}\in K$. 
+Additionally, each $c\in K(u,v)$ can be written in the form:
+$$c= \sum_{j=0}^{n-1} a_{j} v^j$$
+This, because $K(u,v)= K(u)(v)$. By expanding $a_j$ we get that any $c\in K(u,v)$:
+$$c= \sum_{j=0}^{n-1} \sum_{i=0}^{m-1} b_{ij} u^i v^j$$
+This means that no more than these terms are needed to generate the field $K(u,v)$.
 
-Now we prove by the counterpositive: 
+We will prove the second part by means of the counterpositive: $[K(u,v):K]<mn \implies (m,n)>1$. 
+Note that the following couple of equations hold:
+\begin{gather*}
+m[K(u,v):K(u)] = [K(u,v):K]\\
+n[K(u,v):K(v)] = [K(u,v):K]
+\end{gather*}
+Then:
+$$[K(u,v):K] = \frac{m\, n}{\gcd(m,n)}p$$
+Our original assumption that $[K(u,v):K]<mn$ so we conclude $\gcd(m,n)>1$. 
+
 \problem{V.1.20}
+
 \problem{V.1.21}
