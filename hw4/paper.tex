@@ -23,17 +23,21 @@ Our original assumption was that $[K(u,v):K]<mn$ so we conclude $\gcd(m,n)>1$.
 \problem{V.1.20}
 \subsection*{Part (a)}
 Since:
-\begin{gather} \label{eq.1}
-    [ML:M][M:K] = [LM:K]\\
-    [ML:L][L:K] = [LM:K]
+\begin{gather} 
+    [ML:M][M:K] = [LM:K]\label{eq.1}\\
+    [ML:L][L:K] = [LM:K]\label{eq.2}
 \end{gather}
-And by Theorem V.1.2 we see that $[LM:K]$ is finite iff both $[ML:L]$ and $[L:K]$.
+And by Theorem V.1.2 we see that $[LM:K]$ is finite if and only if both $[ML:L]$ and $[L:K]$ are.
 The same applies to $[ML:M]$ and $[M:K]$. 
 
 \subsection*{Part (b)}
-Using equations $\ref{eq.1}$ we get:
-    $$[LM: K]^2= [LM:L][LM:M] \ [M:K][L:K]$$
-    Since both $[LM:L]$ and $[LM:M]$ are greater that 1 and $[LM:K]$ has to be a pos; we get the result:
+Using equations (\ref{eq.1}) and (\ref{eq.2}) we get that $[M:K]| [LM:K]$ and $[L:K]| [LM:K]$. 
+
+To check the second proposition, i.e. that $[LM:K]\leq [L:K][M:K]$. Note that if $\ell \in LM = L(M)$ then the dimension of $LM$ over $L$ is at most that of $LM$ over $K$, thus:
+$$\ell = \sum_{k=1}^{[M:K]}\alpha_k m_k$$
+Where the  $m_k\in M$ and the $\alpha_k \in L$ which have dimension $[L:K]$ over $K$ and thus the whole thing can be expressed as:
+$$\ell =  \sum_{k=1}^{[M:K]}\sum_{j=1}^{[L:K]}\kappa_{j,k}m_kn_j$$
+Where the $\kappa_{j,k}\in K$ and the $n_j\in L$. Note that although we may need to use different elements $m_kn_j$ the upper limit of both sums will always remain the same (in total at most $[M:K][L:K]$ terms). Therefore, the dimension of $[LM:K]$ is at most $[L:K][M:K]$. 
 \subsection*{Part (c)}
 \subsection*{Part (d)}
 \problem{V.1.21}
