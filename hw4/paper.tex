@@ -10,16 +10,16 @@ This, because $K(u,v)= K(u)(v)$. By expanding $a_j$ we get that any $c\in K(u,v)
 $$c= \sum_{j=0}^{n-1} \sum_{i=0}^{m-1} b_{ij} u^i v^j$$
 This means that no more than these terms are needed to generate the field $K(u,v)$.
 
-We will prove the second part by means of the counterpositive: 
+We will prove the second part by means of the counter positive: 
 $$[K(u,v):K]<mn \implies (m,n)>1$$ 
 Note that the following couple of equations hold:
 \begin{gather*}
 m[K(u,v):K(u)] = [K(u,v):K]\\
 n[K(u,v):K(v)] = [K(u,v):K]
 \end{gather*}
-Then:
+Then, the solution to the congruence equation gives:
 $$[K(u,v):K] = \frac{m\, n}{\gcd(m,n)}p$$
-Our original assumption was that $[K(u,v):K]<mn$ so we conclude $\gcd(m,n)>1$. 
+The only positive solution that satisfies $[K(u,v):K]<mn$  implies that $p=1$ and $\gcd(m,n)>1$. 
 
 \problem{V.1.20}
 \subsection*{Part (a)}
@@ -32,7 +32,7 @@ And by Theorem V.1.2 we see that $[LM:K]$ is finite if and only if both $[ML:L]$
 The same applies to $[ML:M]$ and $[M:K]$. 
 
 \subsection*{Part (b)}
-Using equations (\ref{eq.1}) and (\ref{eq.2}) we get that $[M:K]| [LM:K]$ and $[L:K]| [LM:K]$. 
+Using equations (\ref{eq.1}) and (\ref{eq.2}) we get that $[M:K]\Big| [LM:K]$ and $[L:K]\Big| [LM:K]$. 
 
 To check the second proposition, i.e. that $[LM:K]\leq [L:K][M:K]$. Note that if $\ell \in LM = L(M)$ then the dimension of $LM$ over $L$ is at most that of $LM$ over $K$, thus:
 $$\ell = \sum_{k=1}^{[M:K]}\alpha_k m_k$$
@@ -55,25 +55,25 @@ Therefore it is finite.
 
 \problem{V.1.21}
 \subsection*{Part (a)}
-We will prove this proposition by contradiction. Assume that $\ell \in (L\cap M)\backslash K$, then $[K(\ell):K]>1$. And simultaneusly assume that:
+We will prove this proposition by contradiction. Assume that $\ell \in (L\cap M)\backslash K$, then $[K(\ell):K]>1$. And simultaneously assume that:
 $$[LM:K] = [L:K][M:K]$$
 Breaking up trough the intermediate field produces:
 $$[LM:K(\ell)][K(\ell):K] = [L:K(\ell)][M:K(\ell)][K(\ell):K]^2$$
-Cancelling the common factor to conclude more easily later:
+Canceling the common factor to conclude more easily later:
 $$[LM:K(\ell)] = [L:K(\ell)][M:K(\ell)][K(\ell):K]$$
 Under the assumption that $[K(\ell):K]>1$ then it has to be the case that:
 $$[LM:K(\ell)] > [L:K(\ell)][M:K(\ell)]$$
-Which is impossible as it implies that something in $LM$ came out of nowhere (Banach-Tarski? -- Not in my shift). Also this was proven to never be the case in V.1.20 above. Therefore, we have reached a contradiction, and such an $\ell$ is impossible.
+Which is impossible as it implies that something in $LM$ came out of nowhere (Banach-Tarski? -- Not in my shift). Also, this was shown to never be the case in V.1.20 above. Therefore, we have reached a contradiction, and such an $\ell$ is impossible.
 
 \subsection*{Part (b)}
 Let $[L:K]=2$. Then $\{1,\ell\}$ is a basis for any $\ell\in L\backslash K$.
 If additionally, $L\cap M = K$ and $p \in M\backslash L$ then a basis for $K(p)$ is $\{1,p,\ldots,p^{n-1}\}$ where the order of $p$ is bounded above by $[M:K]$. 
 
-Note that $\ell\neq p$ and this means that a basis for $K(\ell,p)$ necessarily has $2n$ elements. The condition of the order of $L$ being specifically 2 enters here; without it, we could not guarante for instance, that $\ell^2\notin M$. 
+Note that $\ell\neq p$ and this means that a basis for $K(\ell,p)$ necessarily has $2n$ elements. The condition of the order of $L$ being specifically 2 enters here; without it, we could not guarantee for instance, that $\ell^2\notin M$. 
 
 In conclusion, we have:
 $$[K(\ell, p):K] = 2[K(p):K]$$
-We can add more elements and the equation is still true, thus:
+We can extend the fields with  more elements and the equation is still true, thus:
 $$[ML:K] = 2[M:K]$$
 
 \subsection*{Part (c)}
@@ -83,7 +83,7 @@ Both this roots have order 3 with basis $\{1,r,r^2\}$ and $\{1,s,s^2\}$ respecti
 
 It is the case that every element in $\QQ(s)$ is either rational or has nonzero imaginary part. This is because (and this is true about both fields) $\sqrt[3] 2$ and $\sqrt[3] 4$ are linearly independent over $\QQ$. This is the reason why $\QQ(r)\cap \QQ(s) =\QQ$. 
 
-On the other hand, $\QQ(s,r)$ is still of order 3 over $\QQ$ since they are roots of $x^3-1$.
+On the other hand, $\QQ(s,r)$ is still of order 3 over $\QQ$ since both $s$ and $r$  are roots of $x^3-1$.
 
 \problem{V.2.1}
 \subsection*{Part (a)}
@@ -92,15 +92,22 @@ If $\sigma \neq 0$; let $\sigma(f) = \sigma(g)$ for $f,g\in F$. Then:
     \sigma(f)- \sigma(g)=0\\
     \sigma(f-g)=0
 \end{gather*}
-Since nonzero ring homomorphisms cannot send units to zero, and all nonzero elements of a field are units, the kernel of $\sigma$ has to be only 0. Thus, $f-g=0$.
+Since nonzero ring homomorphisms cannot send units to zero, and all nonzero elements of a field are units, the kernel of $\sigma$ has to be only $\{0\}$. Thus, $f-g=0$.
 
-Also, the nonzero elements of $F^\times$ form a group under multiplication. Assuming again that $\sigma\neq 0$, then $\sigma(1_F) =1_F$ because the identity is the unique element with the behaviour $\sigma(1_F)\cdot x = x \sigma(1_F) = x$.
-
+Also, for any $x\in F$ we have that $1_Fx=x$. Then:
+$$\sigma(1_F)\sigma(x) = \sigma(x)$$
+If we assume $\sigma\neq 0$ then we can also assume that $\sigma(x)$ is invertible for some $x$. Then canceling $\sigma(x)$ on both sides, we get $\sigma(1_F)= 1_F$.
 
 \subsection*{Part (b)}
-$\aut F$ is a group since for any $\sigma,\tau,\phi\in F$:
+Let $\sigma,\tau,\phi\in \aut F$:
 \begin{description}
-    \item[well-defined] 
+    \item[well-defined:] For any $x\in F$,  $\sigma\circ \tau(x)$ is a unique element of $F$.
+    \item[closedness:] For any $x\in F$, there is $x',x''\in F$ such that $x=\sigma(x')$ and $x'=\tau(x'')$ then $\sigma\tau$ is onto since:
+        $$x=\sigma\tau(x'')$$
+        Next, note that $\sigma\tau$ is also injective: Take $\sigma\tau(x)=\sigma\tau(y)$, then $\tau(x)= \tau(y)$ and this implies $x=y$.
+    \item[associative:] Composition is an associative operation in general.
+    \item[identity:] It is clear that the identity is an automorphism.
+    \item[inverse:] Each $\sigma\in \aut F$ is bijective; so it has an inverse which is also in $\aut F$.
 \end{description}
 
 \subsection*{Part (c)}
@@ -116,7 +123,7 @@ We will follow closely the hint given in the textbook. Let $\sigma\in \aut_\QQ \
 
 This means $\sigma$ preserves order because if we have $x-y\geq 0$ i.e. $x-y$ is nonnegative; then $\sigma(x) - \sigma(y)\geq 0$.
 
-Finally, for each real $x$ assume without loss of generality that $\sigma(x)\leq x$. Take $\{x_n \from n\in \NN\}$ to be the sequence such that $x_n\leq x$ and $x_n\to x$ (namely, a Dedekind cut for $x$, $sup\{x_n\} =x$ ). Thus for all $n\in \NN$:
+Finally, for each real $x$ assume without loss of generality that $\sigma(x)\leq x$. Take $\{x_n \from n\in \NN\}$ to be the sequence such that $x_n\leq x$ and $x_n\to x$ (namely, a Dedekind cut for $x$, $\sup\{x_n\} =x$ ). Thus for all $n\in \NN$:
 $$\sigma(x_n)\leq \sigma(x)\leq x$$
 Taking the limit and by the ``squeeze'' Theorem $\sigma(x) = x$. Therefore, anything in $\aut_\QQ \RR$ is the identity map.
 
@@ -133,7 +140,14 @@ Therefore there are only two options for $\aut_\QQ \QQ(\sqrt{d})$ it is either t
 \problem{V.2.4}
 \underline{Claim:} The Galois group of $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)$ is isomorphic to $\ZZ_2\oplus \ZZ_2 \oplus \ZZ_2$.
 
-Observe that   $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)=\QQ(\sqrt 2)( \sqrt 3) (\sqrt 5)$. Since the elements to which we are extending the rational field are all roots of prime numbers, the minimal polynomial is going to be irreducible at each succesive step. Specifically, $x^2-5$ is irreducible in $\QQ(\sqrt 2)( \sqrt 3)$
+Observe that   $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)=\QQ(\sqrt 2)( \sqrt 3) (\sqrt 5)$. Since the elements to which we are extending the rational field are all roots of prime numbers, the minimal polynomial is going to be irreducible at each successive step. Thus, $x^2-5$ is irreducible in $\QQ(\sqrt 2)( \sqrt 3)$ and $x^2-3$ is irreducible in $\QQ(\sqrt 2)$.
+
+According to this, a basis for $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)$ has the form:
+$$\{\sqrt{2^i3^j5^k} \from i,j,k\in \ZZ_2\}$$ 
+ We can determine $\sigma$ by evaluating it like so:
+$$\sigma(\sqrt{2^i3^j5^k}) = \sigma(\sqrt{2})^i\sigma(\sqrt{3})^j\sigma(\sqrt{5})^k$$   
+By the same as in Problem V.2.3, i.e. $d=\sigma(\sqrt d^2)=\sigma(\sqrt d)^2$; we only need to choose a sign for each of the 3 roots. This gives a total of 8 possible automorphism. Moreover, the sign we choose on a particular root determines the component of $\ZZ_2^3$.
+
 \problem{V.2.5}
 \subsection*{Part (a)}
 To show that $\QQ(\sqrt{d})$ is Galois over $\QQ$, we check it is indeed the case for the \emph{only} element different from the identity $\aut_\QQ \QQ(\sqrt{d})$. We have seen that this is the conjugate $\sigma(a+b\sqrt{d})=a-b\sqrt{d}$ then:
