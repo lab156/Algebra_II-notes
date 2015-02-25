@@ -1,3 +1,4 @@
+\noindent\textbf{Algebra II Assignment 4 \hspace{\fill} Luis Berlioz}
 \problem{V.1.19}
 First we review that at most $mn$ terms will be needed to generate $K(u,v)$.
 Any element in $a_j\in K(u)$ is of the form:
@@ -54,5 +55,89 @@ Therefore it is finite.
 
 \problem{V.1.21}
 \subsection*{Part (a)}
-We will prove this proposition by contradiction. Assume that $\ell \in L\cap M\backslash K$ 
+We will prove this proposition by contradiction. Assume that $\ell \in (L\cap M)\backslash K$, then $[K(\ell):K]>1$. And simultaneusly assume that:
+$$[LM:K] = [L:K][M:K]$$
+Breaking up trough the intermediate field produces:
+$$[LM:K(\ell)][K(\ell):K] = [L:K(\ell)][M:K(\ell)][K(\ell):K]^2$$
+Cancelling the common factor to conclude more easily later:
+$$[LM:K(\ell)] = [L:K(\ell)][M:K(\ell)][K(\ell):K]$$
+Under the assumption that $[K(\ell):K]>1$ then it has to be the case that:
+$$[LM:K(\ell)] > [L:K(\ell)][M:K(\ell)]$$
+Which is impossible as it implies that something in $LM$ came out of nowhere (Banach-Tarski? -- Not in my shift). Also this was proven to never be the case in V.1.20 above. Therefore, we have reached a contradiction, and such an $\ell$ is impossible.
 
+\subsection*{Part (b)}
+Let $[L:K]=2$. Then $\{1,\ell\}$ is a basis for any $\ell\in L\backslash K$.
+If additionally, $L\cap M = K$ and $p \in M\backslash L$ then a basis for $K(p)$ is $\{1,p,\ldots,p^{n-1}\}$ where the order of $p$ is bounded above by $[M:K]$. 
+
+Note that $\ell\neq p$ and this means that a basis for $K(\ell,p)$ necessarily has $2n$ elements. The condition of the order of $L$ being specifically 2 enters here; without it, we could not guarante for instance, that $\ell^2\notin M$. 
+
+In conclusion, we have:
+$$[K(\ell, p):K] = 2[K(p):K]$$
+We can add more elements and the equation is still true, thus:
+$$[ML:K] = 2[M:K]$$
+
+\subsection*{Part (c)}
+Let us call $r=\sqrt[3] 2$ and
+$$s=\sqrt[3] 2 \left( -\frac 12 + i \frac {\sqrt 3}2\right)$$
+Both this roots have order 3 with basis $\{1,r,r^2\}$ and $\{1,s,s^2\}$ respectively.
+
+It is the case that every element in $\QQ(s)$ is either rational or has nonzero imaginary part. This is because (and this is true about both fields) $\sqrt[3] 2$ and $\sqrt[3] 4$ are linearly independent over $\QQ$. This is the reason why $\QQ(r)\cap \QQ(s) =\QQ$. 
+
+On the other hand, $\QQ(s,r)$ is still of order 3 over $\QQ$ since they are roots of $x^3-1$.
+
+\problem{V.2.1}
+\subsection*{Part (a)}
+If $\sigma \neq 0$; let $\sigma(f) = \sigma(g)$ for $f,g\in F$. Then:
+\begin{gather*}
+    \sigma(f)- \sigma(g)=0\\
+    \sigma(f-g)=0
+\end{gather*}
+Since nonzero ring homomorphisms cannot send units to zero, and all nonzero elements of a field are units, the kernel of $\sigma$ has to be only 0. Thus, $f-g=0$.
+
+Also, the nonzero elements of $F^\times$ form a group under multiplication. Assuming again that $\sigma\neq 0$, then $\sigma(1_F) =1_F$ because the identity is the unique element with the behaviour $\sigma(1_F)\cdot x = x \sigma(1_F) = x$.
+
+
+\subsection*{Part (b)}
+$\aut F$ is a group since for any $\sigma,\tau,\phi\in F$:
+\begin{description}
+    \item[well-defined] 
+\end{description}
+
+\subsection*{Part (c)}
+Note that $\aut_K F$ contains the \textbf{identity}, because the identity fixes everything. Also, it is \textbf{closed} under composition because  $\forall k\in K$ and $\sigma,\tau\in \aut_K F$ then $\tau(k)\in K$ whence $\sigma(\tau(k))\in K$. 
+
+Lastly, if $\sigma\in \aut_KF$ then $\sigma^{-1}$ is also in $\aut_K F$. To see this, take any $k\in K$ then $k= \sigma(k)$.  And this implies that 
+$$\sigma^{-1}(k) = \sigma^{-1}(\sigma(k)) = k$$
+Therefore $\aut_K F$ is closed under taking the \textbf{inverse}.
+    
+
+\problem{V.2.2}
+We will follow closely the hint given in the textbook. Let $\sigma\in \aut_\QQ \RR$. Note that $\sigma(x^2) = \sigma(x)^2$, and this implies that $\sigma$ sends nonnegative numbers to nonnegative numbers. 
+
+This means $\sigma$ preserves order because if we have $x-y\geq 0$ i.e. $x-y$ is nonnegative; then $\sigma(x) - \sigma(y)\geq 0$.
+
+Finally, for each real $x$ assume without loss of generality that $\sigma(x)\leq x$. Take $\{x_n \from n\in \NN\}$ to be the sequence such that $x_n\leq x$ and $x_n\to x$ (namely, a Dedekind cut for $x$, $sup\{x_n\} =x$ ). Thus for all $n\in \NN$:
+$$\sigma(x_n)\leq \sigma(x)\leq x$$
+Taking the limit and by the ``squeeze'' Theorem $\sigma(x) = x$. Therefore, anything in $\aut_\QQ \RR$ is the identity map.
+
+\problem{V.2.3}
+Let $\sigma \in \aut_\QQ\QQ(\sqrt d)$. Observe that:
+$$d= \sigma(\sqrt d^2)= \sigma(\sqrt d)^2 $$
+This means that $\sigma(\sqrt d)$ can be either equal to $\sqrt d$ or $-\sqrt d$. 
+
+Since $\QQ(\sqrt d)= \spann\{ 1,\sqrt{d}\}$, taking $\sigma(\sqrt{d}) =\sqrt{d}$ gives the identity. And, taking the only other option $\sigma(\sqrt{d}) =-\sqrt{d}$ gives us the conjugate map. The conjugate map has order to 2 as we check:
+$$\sigma\sigma(a+ b\sqrt{d}) = \sigma(a-b\sqrt{d}) = a+b\sqrt{d}$$
+Therefore there are only two options for $\aut_\QQ \QQ(\sqrt{d})$ it is either the identity or a map of order 2; this has to be isomorphic to $\ZZ_2$.
+
+
+\problem{V.2.4}
+\underline{Claim:} The Galois group of $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)$ is isomorphic to $\ZZ_2\oplus \ZZ_2 \oplus \ZZ_2$.
+
+Observe that   $\QQ(\sqrt 2, \sqrt 3, \sqrt 5)=\QQ(\sqrt 2)( \sqrt 3) (\sqrt 5)$. Since the elements to which we are extending the rational field are all roots of prime numbers, the minimal polynomial is going to be irreducible at each succesive step. Specifically, $x^2-5$ is irreducible in $\QQ(\sqrt 2)( \sqrt 3)$
+\problem{V.2.5}
+\subsection*{Part (a)}
+To show that $\QQ(\sqrt{d})$ is Galois over $\QQ$, we check it is indeed the case for the \emph{only} element different from the identity $\aut_\QQ \QQ(\sqrt{d})$. We have seen that this is the conjugate $\sigma(a+b\sqrt{d})=a-b\sqrt{d}$ then:
+$$a+b\sqrt{d}=a-b\sqrt{d} \implies b=0$$
+
+\subsection*{Part (b)}
+Interestingly, the same proof given above (Problem V.2.3) for the case $\QQ(\sqrt{d})$ where $0<d\in \QQ$ works for $d= -1$ in $\RR$ just by replacing the symbols. Thus, the same conclusion applies, i.e. $\aut_\RR\RR(\sqrt{d} )\cong \ZZ_2$. Moreover, Part (a) works identically also.
