@@ -1,0 +1,24 @@
+\problem{V.2.7}
+\subpart{(a)}
+We follow the hint in the book to show that $x$ is algebraic over $K$. 
+We begin defining the polynomial in $K(f/g)[y]$:
+$$\phi(y) = (f/g)g(y) - f(y)$$
+Observe that $\phi(x) =0$ since $g(x)=g$ and $(f/g)g=f$. 
+Also, the degree of $\phi$ is always $\max\{ \deg f, \deg g\}$. 
+Only the case in which $\deg f= \deg g$ needs explanation. 
+In this case, the principal term has the form $(f/g) a\, y^m - b\, y^m$ where $a,b\in K$ and $m$ is the degree of both $f$ and $g$.
+The resulting coefficient will be different from 0 because $f/g$ is non-constant (since $f/g\notin K$); while $b$ definitely is.
+
+Next we show that $f/g$ is transcendental over $K$.
+If it wasn't, there would exist an irreducible polynomial $K(x) \ni p(f/g)=0$ with $\deg p = n$.
+And this would imply $g^np(f/g)=0$, but this product simplifies into a polynomial in $x$.
+This is a contradiction to the transcendence of $x$.
+
+To check that $\phi(y)=z\,g(y)-f(y)$ is irreducible, notice that as a polynomial in $K(y)[z]$, $\phi(y)$ is linear. 
+Due to $(f,g)=1$, then $\phi(y)$ is also irreducible in $K[y][z]=K[z][y]$.
+Thus, it is irreducible in $K(z)[y]$.
+
+The above implies, that $[K(x):K(f/g)]= \max\{ \deg f, \deg g\}$.
+
+\subpart{(b)}
+
