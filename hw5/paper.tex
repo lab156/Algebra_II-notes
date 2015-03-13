@@ -21,4 +21,22 @@ Thus, it is irreducible in $K(z)[y]$.
 The above implies, that $[K(x):K(f/g)]= \max\{ \deg f, \deg g\}$.
 
 \subpart{(b)}
-Let $p\in E\backslash K$ que macizo compa!
+Let $p,q\in E\backslash K$ then noticing that:
+$$[K(x):K(p,q)] \leq \min\{ [K(x):K(p)], [K(x):K(q)]\}$$
+This is because as we already know,  $x$ is algebraic for both $K(p)$ and $K(q)$; 
+thus the degree of the minimal polynomial in the extension $K(p,q)$ is bounded by the both of the degree of the fields $K(p),K(q)$ separately.  
+
+Now we contruct the extension $E$ by adding all the $f/g\in K(x)$ we may want it to contain; and the inequality persists:
+$$[K(x):E] = \min_{f/g\in E} \{[K(x):K(f/g)]\}$$
+This is always finite as long as $E\backslash K\neq \emptyset$
+
+\subpart{(c)}
+First we check there is an homomorphism from $\sigma \from K[x]\to K(x)$.
+Take the evaluation map from the integral domain $K[x]$ to the commutative ring $K(x)$.
+Then -- by theorem III.5.5 -- there exists a homomorphism (which is no other than the evaluation map).
+Next, notice $\sigma(\psi(x))\neq 0$ if $K[x]\ni \psi(x) \neq 0$. Which means that every nonzero element is mapped to a unit.
+Also, it was established in Homework 4 that $S^{-1}K[x] = K(x)$ where $S$ is the set of nonzero polynomials.
+Thus we can extend $\sigma$'s domain to be the quotient field $K(x)$ and:
+$$\sigma\left(\frac{\phi(x)}{\psi(x)}\right) = \sigma\left(\frac{\phi(f/g)}{\psi(f/g)}\right)$$
+For all $\psi\neq 0$. 
+Note that the requiring that $f$ and $g$ are relatively prime comes into play here, since it guarantees that $x$ is mapped into a nonconstant polynomial (which could be a root of $\psi$).
