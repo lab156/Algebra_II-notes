@@ -26,7 +26,7 @@ $$[K(x):K(p,q)] \leq \min\{ [K(x):K(p)], [K(x):K(q)]\}$$
 This is because as we already know,  $x$ is algebraic for both $K(p)$ and $K(q)$; 
 thus the degree of the minimal polynomial in the extension $K(p,q)$ is bounded by the both of the degree of the fields $K(p),K(q)$ separately.  
 
-Now we contruct the extension $E$ by adding all the $f/g\in K(x)$ we may want it to contain; and the inequality persists:
+Now we construct the extension $E$ by adding all the $f/g\in K(x)$ we may want it to contain; and the inequality persists:
 $$[K(x):E] = \min_{f/g\in E} \{[K(x):K(f/g)]\}$$
 This is always finite as long as $E\backslash K\neq \emptyset$
 
@@ -41,7 +41,7 @@ Thus we can extend $\sigma$'s domain to be the quotient field $K(x)$ and:
 \sigma\left(\frac{\phi(x)}{\psi(x)}\right) = \frac{\phi(f/g)}{\psi(f/g)}
 \end{equation}
 For all $\psi\neq 0$. 
-Note that the requiring that $f$ and $g$ are relatively prime comes into play here, since it guarantees that $x$ is mapped into a nonconstant polynomial (which could be a root of $\psi$).
+Note that the requiring that $f$ and $g$ are relatively prime comes into play here, since it guarantees that $x$ is mapped into a non-constant polynomial (which could be a root of $\psi$).
 
 Secondly we characterize  $\aut_K K(x)$.
 Let $\sigma \from K(x) \to K(x)$ be an automorphism defined like in equation (\ref{ecua.1}).
@@ -62,7 +62,80 @@ And it was shown earlier that this, in addition to being of max degree 1, implie
 \subpart{(d)}
 The sets are equal because of the characterization shown above. 
 This says that $\sigma\in \aut_K K(x)$ iff $\max\{ \deg f, \deg g\}=1$ (with $f,g$ relatively prime).
-At the same time this is equivalent to the rational function having the form:
+Moreover,  the condition that $\max\{ \deg f, \deg g\}=1$ is equivalent to the rational functions having the form:
 $$\sigma(x) = \frac{ax+b}{cx+d}$$
 With $a\,d- b\,c\neq 0$. 
  
+\problem{V.2.6}
+We will call \begin{gather*}
+    \sigma_0(x)=x\\
+    \sigma_1(x) = \frac 1{1-x}\\
+    \sigma_2(x) = \frac{x-1}{x}
+\end{gather*}
+By repeated composition of $\sigma_1$ with itself, we get $\sigma_1\circ \sigma_1=\sigma_2$ and $\sigma_1^3=\sigma_0$. 
+Then $(G,\circ)$ is the cyclic group of 3 elements.
+
+Let $K[G]$ be the \emph{Group Ring} (defined in page 117 of the text\footnote{The precise construction was taken from: http://en.wikipedia.org/wiki/Group\_ring\#Two\_simple\_examples I literally pasted this definition}). 
+Now, let $\tau = z_0\sigma_0 + z_1\sigma_1 + z_2\sigma_2$ and $\kappa = w_0\sigma_0 + w_1\sigma_1 + w_2\sigma_2$ the operations are defined as:
+\begin{gather*}
+    \tau+\kappa = \tau = (z_0 + w_0)\sigma_0 + (z_1+w_1)\sigma_1 + (z_2+w_2)\sigma_2\\
+   \tau\kappa=(z_0w_0 + z_1w_2 + z_2w_1)\sigma_0+(z_0w_1 + z_1w_0 + z_2w_2)\sigma_1+(z_0w_2 + z_2w_0 + z_1w_1)\sigma_2
+\end{gather*}
+Next we check that $K(x)$ is a $K[G]$-module. For this, take $f_1/g_1, f_2/g_2\in K(x)$ and $\tau,\kappa\in K[G]$:
+\begin{enumerate}
+    \item $\tau\left( \frac{f_1}{g_1}+\frac{f_2}{g_2}\right)= \frac{f_1(\tau x)}{g_1(\tau x)}+\frac{f_2(\tau x)}{g_2(\tau x)}=\tau\left( \frac{f_1}{g_1}\right) +\kappa\left(\frac{f_2}{g_2}\right)$
+    \item $(\tau+\kappa)\left( \frac fg \right) = \frac{f((\tau+\kappa)x)}{g((\tau+\kappa)x)}$ and the only sane way to define $(\tau+\kappa)x=\tau x+ \kappa x$.
+    \item Associativity, is just a result of the associativity for composition of maps in general.
+\end{enumerate}
+
+We will prove that an element $f/g\in K(x)$ is invariant iff it is in the range of $s=(\sigma_0+\sigma_1+\sigma_2)\in K[G]$ (where we are regarding $s$ as an endomorphism of $K(x)$). 
+To compute $s\,x$:
+$$s\,x = x + \frac 1{1-x} + \frac {x-1}{x}= \frac{x^{3} - 3 \, x + 1}{x^{2} - x}$$ 
+
+Observe that for  $i=0,1,2$ we get that $\sigma_i s = s$ where the composition only shuffles the summands around. Thus $s\,x = (\sigma_i s)x = \sigma_i (s \,x)$ for all $i=0,1,2$.
+
+Now assume that $f/g\in K(x)$ is such that $\sigma_i(f/g)=f/g$. Then it checks that:
+$$3\frac fg = \sigma_0\left(\frac fg\right) + \sigma_1\left(\frac fg\right) + \sigma_2\left(\frac fg\right)$$
+Thus we get:
+$$\frac fg = s\left(\frac 13  \frac fg\right)$$
+ The point is that $f/g$ is in the range of $s$ is made. 
+
+ The fixed field is then $G'=K(sx)$. As can be checked by taking any $\phi(sx)/\psi(sx)\in K(s\,x)$ all the $\sigma_i$ are the invariant.
+
+\problem{V.2.9}
+\subpart{(a)}
+Following closely the steps hinted in the text, we give a proof by contradiction. Suppose that $K$ is an infinite field and that $K(x)$ is \textbf{not }a Galois extension. Not being Galois implies that if 
+$$E=(\aut_KK(x))'= \{ k \in K(x) \from  \sigma(k)=k, \ \forall \sigma \in \aut_KK(x) \} $$ 
+And $K\subsetneq E$. According to Problem V.2.6, Part (b), we know that this implies that:
+$$[K(x):E] <\infty$$
+This bound implies that $[E':\{e\}]\leq [K(x):E]<\infty $ since this is precisely the result in Lemma V.2.8 in the textbook. Moreover, $E'= \aut_K K(x)$ and by Part (d) also in problem V.2.6, we know that:
+\begin{equation}\label{eq.automorphism}
+\aut_K K(x) = \left\{ \sigma(x) = \frac{ax+b}{cx+d}\right \}
+\end{equation}
+To establish that this group is infinite, notice that it contains all the dilation maps: $\{x\mapsto a\,x\}$ which have the same cardinality as $K$. 
+
+Finally, this is a contradiction since $E'$ should be finite on one hand and infinite on the other, thus proving that it is impossible for $K(x)$ not to be Galois when $K$ is infinite.
+
+\subpart{(b)}
+Now we assume that $K$ is finite and that $K(x)$ is Galois over $K$. Then, we have that the field fixed by $\aut_K K(x)$ is exactly $K$. Also, being $K$ finite, means by equation (\ref{eq.automorphism}) that $\aut_K K(x)$ is finite since there are only  a finite number of coefficients $a,b,c,d\in K$ to choose from. 
+
+As hinted in the text, and since $[\aut_K K(x):\{e\}]<\infty$ we can use Lemma V.2.9 like so:
+$$[K(x):K] \leq [\aut_K K(x):\{e\}]<\infty$$
+Since we are working under the assumption that $K = (\aut_K K(x))'$. Here the contradiction becomes apparent since the upper bound means that $K(x)$ is algebraic over $K$; but of course $x$ is transcendental over $K$.
+
+\problem{V.2.11}
+To prove that $\QQ(x^2)$ is closed we will proceed by first computing 
+$$(\QQ(x^2))'= \aut_{\QQ(x^2)}\QQ(x)$$
+and then showing that $(\QQ(x^2))'' = \QQ(x^2)$.
+
+Observe that in order for $\sigma \in \aut_{\QQ(x^2)}\QQ(x)$ it has to satisfy:
+$$\sigma(x^2) = \left( \frac{ax+b}{cx+d}\right)^2=x^2$$
+Thus, $x\mapsto \pm x$ should be elements of it. In addition to this, $|\aut_{\QQ(x^2)}\QQ(x)|\leq [\QQ(x):\QQ(x^2)]=2$; which means we are done looking for elements. 
+
+Now we seek the fixed field of $x\mapsto \pm x$. This is the field of \emph{even} rational functions a.k.a. $\QQ(x^2)$. Assuming that any term of odd degree appears in an invariant polynomial produces a contradiction by applying the map $x\mapsto -x$.
+
+To check that $\QQ(x^3)$ is not closed, observe that in this case:
+$$\sigma(x^3) = \left( \frac{ax+b}{cx+d}\right)^3=x^3$$
+Which leaves no more option for the fixed subgroup than the trivial subgroup. Notwithstanding, the fixed field for the trivial subgroup is all $\QQ(x)$.
+
+\problem{V.2.12}
