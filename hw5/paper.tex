@@ -139,3 +139,16 @@ $$\sigma(x^3) = \left( \frac{ax+b}{cx+d}\right)^3=x^3$$
 Which leaves no more option for the fixed subgroup than the trivial subgroup. Notwithstanding, the fixed field for the trivial subgroup is all $\QQ(x)$.
 
 \problem{V.2.12}
+Let $\overline{\aut_K E}$ be the set of all the extensions of $\sigma\in \aut_KE$ to $\bar\sigma\in \aut_KF$. We first show that $\overline{\aut_K E}$ is group, and since it is contained in the Galois group of $F$ over $K$ then:
+\begin{equation}\label{for.subgroup}
+\overline{\aut_K E}<\aut_KF
+\end{equation}
+Let $\sigma, \tau \in \overline{\aut_K E}$, then the restrictions: $\sigma|_E,\tau|_E\in \aut_KE$ thus:
+$$(\sigma\circ\tau^{-1})|_E\in \aut_KE$$
+So $\sigma\circ\tau^{-1}$ is an extension.
+
+Next, using (\ref{for.subgroup}) and Lemma V.2.6 Part (ii') we can say the following about the corresponding fixed fields of these two groups:
+$$(\aut_KF)' \subset \left(\overline{\aut_K E}\right)'$$
+Our goal is to prove that $(\aut_KF)'=K$. Notice that in general $(\aut_KF)'\supset K$; then if we prove $\left(\overline{\aut_K E}\right)'\subset K$ means we are done.
+
+To prove that $\left(\overline{\aut_K E}\right)'\subset K$, first take $x\in E\backslash K$. Then since $E$ is Galois over $K$, there exists a $\sigma\in \aut_KE$ such that $\sigma(x)\neq x$. Next, if $x\in F\backslash E$, then because $F$ is Galois over $E$ there exists $\tau\in \aut_EF$ such that $\tau(x)\neq x$. Observe that $\tau\in \aut_EF$ means that $\tau|_E= Id$ and this means that $\tau|_E\in \aut_KE$ (which of course mean they are extendible).
