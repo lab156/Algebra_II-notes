@@ -136,7 +136,7 @@ Now we seek the fixed field of $x\mapsto \pm x$. This is the field of \emph{even
 
 To check that $\QQ(x^3)$ is not closed, observe that in this case:
 $$\sigma(x^3) = \left( \frac{ax+b}{cx+d}\right)^3=x^3$$
-Which leaves no more option for the fixed subgroup than the trivial subgroup. Notwithstanding, the fixed field for the trivial subgroup is all $\QQ(x)$.
+Which leaves no more option for the fixed subgroup than the trivial subgroup. Therefore, the fixed field for the trivial subgroup is all $\QQ(x)$.
 
 \problem{V.2.12}
 Let $\overline{\aut_K E}$ be the set of all the extensions of $\sigma\in \aut_KE$ to $\bar\sigma\in \aut_KF$. We first show that $\overline{\aut_K E}$ is group, and since it is contained in the Galois group of $F$ over $K$ then:
@@ -152,3 +152,35 @@ $$(\aut_KF)' \subset \left(\overline{\aut_K E}\right)'$$
 Our goal is to prove that $(\aut_KF)'=K$. Notice that in general $(\aut_KF)'\supset K$; then if we prove $\left(\overline{\aut_K E}\right)'\subset K$ means we are done.
 
 To prove that $\left(\overline{\aut_K E}\right)'\subset K$, first take $x\in E\backslash K$. Then since $E$ is Galois over $K$, there exists a $\sigma\in \aut_KE$ such that $\sigma(x)\neq x$. Next, if $x\in F\backslash E$, then because $F$ is Galois over $E$ there exists $\tau\in \aut_EF$ such that $\tau(x)\neq x$. Observe that $\tau\in \aut_EF$ means that $\tau|_E= Id$ and this means that $\tau|_E\in \aut_KE$ (which of course mean they are extendible).
+
+\problem{V.3.1}
+If $F$ is a splitting field over $K$  for each $f_i$ where $i=1,2\ldots n$:
+$$f_i = u_0^i(x-u_1^i)\cdots (x-u_{n_i}^i)$$
+Then,  $f=f_1f_2\cdots f_n$ also splits in $F$ like so:
+$$f=\prod_{i=1}^n u_0^i(x-u_1^i)\cdots (x-u_{n_i}^i)$$
+
+On the other hand, let:
+$$f= f_1\cdots f_n =  u_0(x-u_1)\cdots (x-u_N)$$
+And without loss of generality, take $f_1$. 
+Then going through all the $u_i$-s; if $f_1(u_i)=0$ we can write $f_1 = (x-u_i)g$. 
+This procedure repeated for each $u_i$ will split $f_1$. 
+This is because the $f_1|f$; thus $f(u)\neq 0 \implies f_1(u)\neq 0$.
+
+\problem{V.3.2}
+For any $f\in S$ we are told that for $u_0,u_1,\ldots, u_n\in F$:
+$$f=u_0(x-u_1)\cdots (x-u_n)$$
+To check that $f$ also splits in $E$; just notice that the product above also works for $E\supset K$. 
+Therefore $F$ splits $S$ over $E$.
+
+\problem{V.3.4}
+Let $f\in S$, then $f$ splits over $F$ with $u_0,u_1,\ldots,u_n\in F$ and:
+$$f=u_0(x-u_1)\cdots (x-u_n)$$
+Also, let $f$ factor in $K$ into $k$ irreducible polynomials: $g_1,\ldots g_k\in K[x]$
+$$f(x)=g_0g_1(x)\cdots g_{k}(x)$$
+By Problem V.3.1 we know that each $g_j(x)$ splits over $F$.
+
+\problem{V.3.5}
+We are told that $f\in K[x]$ has degree $n$ and that $F$ is a splitting field of $f$ over $K$. 
+This implies that for $u_0,u_1,\ldots,u_n\in F$:
+$$f=u_0(x-u_1)\cdots (x-u_n)$$
+Moreover, $F=K(u_1,\ldots,u_n)$. 
