@@ -1,3 +1,4 @@
+\noindent\textbf{Algebra II Assignment 5 \hspace{\fill} Luis Berlioz}
 \problem{V.2.6}
 \subpart{(a)}
 We follow the hint in the book to show that $x$ is algebraic over $K$. 
@@ -182,5 +183,14 @@ By Problem V.3.1 we know that each $g_j(x)$ splits over $F$.
 \problem{V.3.5}
 We are told that $f\in K[x]$ has degree $n$ and that $F$ is a splitting field of $f$ over $K$. 
 This implies that for $u_0,u_1,\ldots,u_n\in F$:
-$$f=u_0(x-u_1)\cdots (x-u_n)$$
-Moreover, $F=K(u_1,\ldots,u_n)$. 
+$$f=c_0(x-u_1)\cdots (x-u_n)$$
+Moreover, $F=K(u_1,\ldots,u_n)$ and assume $k\leq n$ roots are not in $K$. 
+Without loss of generality, we can say that they are $u_1,\ldots, u_k\in F\backslash K$; and the rest $u_{k+1},\ldots,u_n\in K$.
+
+With this setup, we get that $(x-u_1)\cdots(x-u_k)\in K[x]$ is irreducible as a polynomial in $K[x]$. 
+The problem seems to be asked in http://math.stackexchange.com/questions/62762/the-degree-of-a-splitting-field-of-a-polynomial. I haven't check to see if it's correct.
+
+\problem{V.3.8}
+Using the polynomial hinted in the text:
+$$f=a_1 + (x-a_0)(x-a_1)\cdots (x-a_n)$$
+Observe that $f$ for every $a\in K$, we have that $f(a)$ is non-zero. Thus $f$ is  a nonconstant polynomial that has no root. Therefore, $K$ is not closed.
