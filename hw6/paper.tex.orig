@@ -62,28 +62,35 @@ Such that  $\Psi\sigma$ has the same action on $S$ as $\sigma$. To be precise:
 $$\sigma(\alpha_i)=(\Psi\sigma)\alpha_i$$
 And fixes all the elements of $M$ (including the ones in $S$). Observe that $\Psi\sigma\in \aut_MM(S)$ because for any $m_1\ldots m_n \in M$:
 $$\Psi\sigma(m_1 \alpha_1+\ldots + m_n \alpha_n) = m_1 \Psi\sigma(\alpha_1)+\ldots +  m_n \Psi\sigma(\alpha_n)$$
+<<<<<<< HEAD
+It is a well-defined map since every $\sigma$ in $
+=======
 It is a well-defined map since it unambiguously acts on the roots $\alpha_i$ leaving $M$ fixed; and again this \#CompletelyDeterminesAnAutomorphism.
-This same argument also implies surjectivity.
+>>>>>>> hw6
 To show that $\Psi$ is a group homomorphism, take $\sigma, \tau\in   \aut_{L\cap M} K(S)$. We need to show that for all $\alpha_i \in S$:
 $$\Psi(\sigma \tau)\alpha_i= (\Psi\sigma)(\Psi\sigma)\alpha_i$$   
 This is the case since $\Psi(\sigma \tau)\alpha_i =(\sigma\tau)\alpha_i$ by definition and this same definition applied twice implies that 
 $$(\Psi\sigma)(\Psi\tau)\alpha_i=(\Psi\sigma)\tau (\alpha_i)=(\sigma\tau)\alpha_i$$
-To show that $\Psi$ has trivial kernel, let $\Psi\sigma$ be the identity automorphism. 
-Then $\sigma(\alpha_i)=\Psi\sigma(\alpha_i) = \alpha_i$. 
-Observe there is no contradiction in the case there were any $\alpha$ in $M$ because then we would have $\alpha\in L\cap M$.
-
+To show that $\Psi$ has trivial kernel, let $\Psi\sigma$ be the identity automorphism. Then $\Psi\sigma(\alpha_i) = \sigma(\alpha_i)=\alpha_i$. Therefore: 
+$$\sigma(k_1 \alpha_1+\ldots + k_n \alpha_n) = k_1 \sigma(\alpha_1)+\ldots +  k_n \sigma(\alpha_n)=k_1 \alpha_1+\ldots + k_n \alpha_n$$
+In other words, $\sigma$ is the identity.
 
 \problem{V.3.15}
 \subpart{(a)}
+<<<<<<< HEAD
+By Theorem V.3.12 part (ii'), we know that $F$ is Galois over every $E$. 
+To check that $F$ is an algebraic extension of $E$, take any $u\in F$, then $u$ is a root of a polynomial  $f\in K[x]$ thus also  $f\in E[x]$. 
+Therefore $F$ is an algebraic extension of $E$.
+
+Indeed $\QQ(x^3)$ is an intermediate extension relative to $\QQ$ and $\QQ(x)$ that is not closed, thus $\QQ(x)$ is not Galois over it.
+\subpart{(b)}
+=======
 By Theorem V.3.12 part (ii'), we know that $F$ is Galois over every $E$. To check that $F$ is an algebraic extension of $E$, take any $u\in F$, then $u$ is a root of a polynomial  $f\in K[x]$ thus also  $f\in E[x]$. Therefore $F$ is an algebraic extension of $E$.
 \subpart{(b)}
 We will show that all $\sigma\in \aut_KE$ are extendible namely to at least one $\bar\sigma \in \aut_K F$. By problem V.2.12 which was proven on homework 5, we get that $F$ is Galois over $K$.
 
 Let $S$ be the set of all roots of the family of polynomials in $K[x]$ that $F$ splits, then $F=E(S)$. 
 For any $\sigma\in \aut_KE$, if it is going to extend to $F$ at all then it has to satisfy for any $F\ni u=e_1 r_1 + \ldots e_n r_n,\ e_i\in E$ and $r_i\in S$:
-$$\bar \sigma(e_1 r_1 + \ldots e_n r_n)=\sigma(e_1) \sigma(r_1) + \ldots +\sigma(e_n) \sigma(r_n)$$
-If we choose $\sigma(r_i)=r_i$ for all $i=1,\ldots,n$, we assert this gives an automorphism in $\aut_KF$. 
-This is the case because $\bar\sigma|_E=\sigma$, and by defining $\bar \sigma$ on all the generating set of $F$ we completely determine an automorphism in $\aut_K F$.
-
-\problem{V.3.16}
-
+$$\sigma(e_1 r_1 + \ldots e_n r_n)=\sigma(e_1) \sigma(r_1) + \ldots +\sigma(e_n) \sigma(r_n)$$
+If we choose $\sigma(r_i)=r_i$ for all $i=1,\ldots,n$, we assert this gives a an automorphism in $\aut_KF$.
+>>>>>>> hw6
