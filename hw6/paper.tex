@@ -1,3 +1,4 @@
+\noindent\textbf{Algebra II Assignment 6 \hspace{\fill} Luis Berlioz}
 \problem{V.3.9}
 Assuming that $F$ is the algebraic closure of $K$, let $E$ be any algebraic field extension.
 Let us call $\bar E$ the algebraic closure of $E$, which we know to exist by Theorem V.3.6.
@@ -97,4 +98,18 @@ Then $\sqrt{a}$ is just the quotient of two monomials evaluated at primes. This 
 
 
 \subpart{(b)}
+There are two options for how any $\sigma \in \aut_{\QQ}\QQ(X)$ maps each $\sqrt{p}\in X$. These are $\sigma(\sqrt{p})=\pm \sqrt{p}$. In any case, this means $\sigma(\sigma(\sqrt{p}))=\sqrt{p}$, equivalently $\sigma\circ\sigma=Id$.
+
+Observe that if $\sigma,\tau\in \aut_\QQ \QQ(X)$, then:
+$$\sigma\circ\tau = (\sigma\circ\tau)^{-1} = \tau^{-1}\circ\sigma^{-1}=\tau\circ\sigma$$
+And thus $\aut_\QQ\QQ(X)$ is Abelian; it is also of order 2, therefore a unitary $\ZZ_2-$module.
+
+\subpart{(c)}
+Every sequence in $\{+,-\}^{\aleph_0}$ maps injectively into $\aut_\QQ \QQ(X)$ in the following way: for each sequence of symbols + or -, give that sign to the square root of the corresponding prime or -1.
+
+\subpart{(d)}
+If $B$ is a basis of $\aut_\QQ \QQ(X)$ then $\{+,-\}^{\aleph_0}$ maps injectively into the set of linear combination of $B$. These linear combinations have cardinality $\aleph_0|B|$. Then $|\{+,-\}^{\aleph_0}|\leq \aleph_0|B|$ and necessarily this means $|B|$ is not countable.
+
+\subpart{(e)}
+Every individual element of $\aut_\QQ \QQ(X)$ contitutes itself into a subgroup of order 2. There is an uncountable amount of elements.
 
