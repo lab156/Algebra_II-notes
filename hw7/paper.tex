@@ -1,0 +1,43 @@
+\noindent\textbf{Algebra II Assignment 7 \hspace{\fill} Luis Berlioz}
+\problem{V.3.17}
+Let $u\in E$, since $E$ is algebraic\footnote{As is with separable elements, I'm assuming that only algebraic extensions are normal}over $K$ then the minimal polynomial $f\in K[x]$ splits in $E$. Now, if $\sigma\in \aut_KF$, this means that $\sigma(u)\in E$. And by Theorem V.3.14, $E$ is the splitting field of a set of polynomial that have a root in $E$, we get $E=K(S)$. Thus every $v\in E$ is a linear combination of some roots $u_1,\ldots, u_n\in S$ like so:
+$$v=a_1u_1+\ldots+a_n u_n$$
+Thus we that:
+$$\sigma(v)=a_1\sigma(u_1)+\ldots+a_n \sigma(u_n)$$
+Is also in $E$. Therefore, $\sigma(E)\subset E$.
+
+\problem{V.3.18}
+The previous problem takes care of showing that if is  $E$ normal, then it is stable. Then, all left to do is the converse: if $E$ is stable over $K$ then it is normal over $K$. 
+
+Assume that $E$ is an stable extension over $K$.  Let $u$ be a root of a minimal polynomial $f\in K[x]$ such that $u\in E$. Using that $F$ is normal over $K$, we know that $f$ splits over $F$. Say $u=u_1,\ldots,u_n\in F$ are all the roots of $f$, observe that we can define $\sigma_j\in \aut_KF$ in the following way:
+ $$\sigma_j(u_1)= u_j$$
+Since $E$ is stable, this means that all $u_1\ldots u_n\in E$ and thus $f$ also splits over $E$.
+
+Using Lemma V.2.14, we get that $\aut_KF/E'$ is isomorphic to the subgroup of all the extendible maps in $\aut_KE$.  We show next  that all $\sigma \in \aut_K E$  are extendible. This is because to find an extension we need only to define them on $F\backslash E$. To this end, let $S$ be such that $F=K(S)$. Then we define $\bar\sigma\in \aut_KF$ by:
+$$\bar\sigma(r) =\begin{cases}
+r & r\in S\backslash E\\
+\sigma(r) & r \in E
+\end{cases}$$
+Let $F\ni u=k_1 r_1 + \ldots k_n r_n$, for $\ k_i\in K$ and $r_i\in S$; if $u\in E$ then $\bar\sigma(u)= \sigma(u) $, thus it is an extension.
+
+\problem{V.3.19}
+Due to readability concerns, the relationship $E$ is a field extension of $K$ will be abbreviated as $E/K$ and $E'$ is a normal subgroup of $G$ as $E'\unlhd G$.
+
+The hypotheses of the Fundamental Theorem are that $F/K$ is Galois and algebraic. With these assumptions, ($E/K$ is Galois) $\iff$ ($E'\unlhd G$). By Lemma V.2.11 (ii), and noting that $E'' = E$ we get that $E$ is stable relative to $F/K$. Observe that $F/K$ is a splitting field of a set of polynomial in $K[x]$ and thus $F/K$ is normal. This enables us to use the result in problem V.3.18 above, specifically: ($E/K$ is normal) $\iff$ ($E$ stable rel. $F/K$).
+
+Next, we start with ($E/K$ is normal) $\iff$ ($E'\unlhd G$). Since we are still under the hypotheses of the Fundamental Theorem, ($E'\unlhd G$) $\iff$ ($E/K$ is Galois). Therefore the statements are equivalent.
+
+\problem{V.3.20}
+$\QQ(\sqrt 2)$ is normal over $\QQ$ because $x^2-2$ is a polynomial in $\QQ[x]$ with $\sqrt 2$ as one of its roots and thus $[\QQ(\sqrt 2):\QQ]=2$. Similarly, $\sqrt[4] 2$ is a root of the polynomial $x^2-\sqrt 2$ in $\QQ(\sqrt 2)$. Nevertheless, $\QQ(\sqrt[4] 2)$ is not normal over $\QQ$ because even though $\sqrt[4]2$ is a root of $x^4-2\in \QQ[x]$, this polynomial does not split in $ \sqrt[4]2$. The reason for this being that, $\sqrt[4]2$ contains none of the complex roots of $x^4-2$.
+
+\problem{V.3.21}
+If we assume first that $F$ is normal over $K$, we know that the algebraic closure of $K$ namely $\bar K$, contains any normal extension of $K$. This is because any normal extension must be algebraic and $\bar K$ admits no larger extension (Theorem 3.3 (iv)). Then any $K-$monomorphism $\sigma \from F\to N$ can be viewed as $\sigma \from F\to \bar K$ and Theorem 3.14 (i)$\implies $ (iii) takes care of the of this situation.
+
+On the other hand, if we fix $N$ as a normal extension of $K$ then all $\sigma\in \aut_KN$ when restricted to $F$ turn out to be a $K-$monomorphims. We thus get that $\sigma|_F(F)=F$, implying $F$ is stable. Therefore, by Exercise V.3.18 above, $F$ is normal over $K$.
+
+\problem{V.3.22}
+Let $u\in F$, we are told to assume that there exists an intermediate field $E$ such that $u\in E$ and $E$ is normal over $K$. Then the minimal polynomial $f\in K[x]$ splits over $E$ whence it also splits in $F$. We conclude that $F$ is normal over $K$. 
+
+\problem{V.3.23}
+If $[F:K]=2$, then every $u\in F$ is the root of a polynomial $f\in K[x]$ of degree 2.  $f$ has at most 2 roots $u_1,u_2$ whose sum is in $K$; they are $K-$ conjugates. Therefore $f$ splits in $F$.
+
