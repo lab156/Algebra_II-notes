@@ -1,0 +1,24 @@
+\problem{IV.6.6}
+ We are given that $A,B$ are of order $r,s$ respectively, thus  $A \cong R/(r)$ and $B\cong R/(s)$. 
+ Next we use Lemma IV.6.11 to write them as a direct sum of the cyclic  submodules of order the power of a prime. 
+ Also, given that $r$ and $s$ are not relatively prime, their prime decompostions will share some associate elements. 
+ To simplify matters and without loss of generality; we will assume that these associate elements are equal.
+\begin{gather*}
+    A\cong R/(r) = R/(r_1^{n_1})\oplus \cdots \oplus R/(r_k^{n_k})\oplus R/(q_1^{n_{k+1}}\oplus \cdots \oplus R/(q_\ell^{n_{k+\ell}})\\
+    B\cong R/(s) = R/(s_1^{m_1})\oplus \cdots \oplus R/(s_j^{m_{j}})\oplus R/(q_1^{m_{j+1}})\oplus \cdots \oplus R/(q_\ell^{m_{j+\ell}})
+\end{gather*}
+The primes $r_1,\ldots r_k,s_1,\ldots,s_j,q_1,\ldots,q_\ell$ are all distinct. 
+
+In order to write $A\oplus B$ decomposed into invariant factors, we need to sort the powers of the common primes: 
+\begin{gather*}
+    i_1= \min\{ n_{k+1},m_{k+1}\}\\
+    I_1= \max\{ n_{k+1},m_{k+1}\}
+\end{gather*}
+Thus we get the list of primes:
+\begin{equation*}
+ \begin{matrix}
+     r_1^{0}   & \cdots & r_k^{0}   & s_1^{0}   & \cdots & s_j^{0} & q_1^i & \cdots    & q_\ell^i \\
+     r_1^{n_1} & \cdots & r_k^{n_k} & s_1^{m_1} & \cdots & s_j^{m_{j}}  & q_1^I & \cdots & q_\ell^I 
+\end{matrix} 
+\end{equation*}
+
