@@ -1,7 +1,8 @@
+\noindent\textbf{Algebra II Cathch up Exercises \hspace{\fill} Luis Berlioz}
 \problem{IV.6.6}
  We are given that $A,B$ are of order $r,s$ respectively, thus  $A \cong R/(r)$ and $B\cong R/(s)$. 
  Next we use Lemma IV.6.11 to write them as a direct sum of the cyclic  submodules of order the power of a prime. 
- Also, given that $r$ and $s$ are not relatively prime, their prime decompostions will share some associate elements. 
+ Also, given that $r$ and $s$ are not relatively prime, their prime decompositions will share some associate elements. 
  To simplify matters and without loss of generality; we will assume that these associate elements are equal.
 \begin{gather*}
     A\cong R/(r) = R/(r_1^{n_1})\oplus \cdots \oplus R/(r_k^{n_k})\oplus R/(q_1^{n_{k+1}}\oplus \cdots \oplus R/(q_\ell^{n_{k+\ell}})\\
@@ -17,8 +18,26 @@ In order to write $A\oplus B$ decomposed into invariant factors, we need to sort
 Thus we get the list of primes:
 \begin{equation*}
  \begin{matrix}
-     r_1^{0}   & \cdots & r_k^{0}   & s_1^{0}   & \cdots & s_j^{0} & q_1^i & \cdots    & q_\ell^i \\
-     r_1^{n_1} & \cdots & r_k^{n_k} & s_1^{m_1} & \cdots & s_j^{m_{j}}  & q_1^I & \cdots & q_\ell^I 
+     r_1^{0}   & \cdots & r_k^{0}   & s_1^{0}   & \cdots & s_j^{0} & q_1^{i_1} & \cdots    & q_\ell^{i_\ell} \\
+     r_1^{n_1} & \cdots & r_k^{n_k} & s_1^{m_1} & \cdots & s_j^{m_{j}}  & q_1^{I_1} & \cdots & q_\ell^{I_\ell}
 \end{matrix} 
 \end{equation*}
+According to the textbook on the proof of Theorem IV.6.12 (guidelines in pages 80-81), the invariant factors are the product of each line in the array above, namely:
+\begin{gather*}
+    g= q_1^{i_1}\cdots q_\ell^{i_\ell}\\
+    L= r_1^{n_1}  \cdots  r_k^{n_k}  s_1^{m_1}  \cdots  s_j^{m_{j}}   q_1^{I_1}  \cdots  q_\ell^{I_\ell}
+\end{gather*}
+It only remains to prove the these products are the gcd and lcm. This is since $g| s$ and $g|r$, and, for any divisor of $s$ and $r$ must divide $g$ by virtue of $R$ being a Unique Factorization Domain. Lastly, observe that:
+$$\gcd(r,s)\, L = r\,s$$
+Therefore it must be the case that $L$ and $\lcm(r,s)$ are associates.
 
+\problem{IV.6.7}
+\subpart{(a)}
+In order to show that any $R-$submodule $B\subset A$ is an $R/(p^n)-$submodule. First we show that the module operation is well-defined:
+$$B\ni b \mapsto (r+(p^n))b$$
+Observe that  $b\in A$ and so $p^nb=0$. $B$  is an $R-$submodule and so $(r+(p^n) )b = r\, b$ is  always an element of $B$; the same  also applies to   $((r+s)+(p^n))b$ and $(r+(p^n) )(b+b')$.
+Next, if $r+(p^n)$ and $s+(p^n) $ are in the same equivalence class then $r-s\in (p^n)$ hence:
+$$(r+(p^n))b -  (s+(p^n))b= (r-s)b=0$$
+And thus we have a $R/(p^n)-$submodule.
+
+The pullback along the homomorphism $R\mapsto R/(p^n)$ always defines 
