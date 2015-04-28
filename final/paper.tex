@@ -2,6 +2,28 @@
 \problem{1}
 \problem{2}
 Ver pag 278 ejer. 14.
+\problem{3}
+Let $\theta \from \hom_S(B,C)\otimes_R B \to C$ defined as:
+$$\theta (h\otimes_R b)= h(b)$$
+Where $h\in \hom_S(B,C)$ and $b\in B$. Observe that the tensor product  $\hom_S(B,C) \otimes_R B$ makes sense because:
+$$b \otimes_R(rb) = (h\, r) \otimes_ R b$$
+And $h\,r$ is well-defined whenever it is for the argument of this morphism by setting it to be $h\, r =h \circ \pi_r$. And $\pi_r$ is the premultiplication morphism $\pi_r(b)=r\, b$.
+
+Likewise, $\theta$ is a well-defined right $S-$module and group morphism, to wit:
+$$\theta((h \otimes_ R b)s)=\theta(h \otimes_ R (b\, s))=h(b\, s)= h(b)s$$
+And for an also arbitrary $b'\in B$:
+$$\theta(h \otimes_ R (b+b'))=\theta(h \otimes_ R b+ h \otimes_ R b')=h(b+b')=h(b)+h(b')$$
+Idem for the case of $(h+h')  \otimes_ R b$.
+
+On the other hand, now take $\lambda \from A \to \hom_S(B,A\otimes_R B)$\footnote{The ``misprint''  is that $R$ appears here as the base ring, but $S$ is the best choice in this case.} defined as: $\lambda (a) = h_a\in \hom_S(B,A\otimes_R B)$ defined for all $a\in A$ and $b\in B$ as: 
+$$h_a(b) = a \otimes_R b $$
+Notice that $\lambda$ is a well-defined right $R-$module homomorphism since $\lambda(a\,r) = h_{ra}$ and:
+$$h_{a\,r}(b) = (a\, r) \otimes_ R b = a \otimes_ R (r\,b)= h_a(r\, b) = h_ar(b)$$
+Since this is the case for any $b\in B$ then $\lambda(ar)= h_a r= \lambda(a)r$. To show that $\lambda$ is a group morphism requires of  an identical proof.
+
+\problem{4}
+$K=\ZZ_2(x)$ is a field in which the element $x$ is prime. This is because 
+
 \problem{6}
 Let $\phi \from A\to B$ be a monomorphism. The induced morphims of $\phi$ is defined for all $f\in \hom(B,\QQ/\ZZ)$ as: 
 $$\theta f= id\circ f\circ \phi$$
