@@ -1,7 +1,27 @@
 \noindent\textbf{Algebra II Final Examination \hspace{\fill} Luis Berlioz}
 \problem{1}
+
 \problem{2}
-Ver pag 278 ejer. 14.
+The polynomial $(x^3-1)(x-2)$ has $[K(\alpha,\beta,\gamma):K]=3$. To show this last assertion, let $\omega= -\frac 12 +i\frac{\sqrt 3}{2}$ be the first complex cubic root of unity, letting $u_1=1,\ u_2=\omega,\ u_3=\omega^2,\ u_4=2$ then:
+\begin{gather*}
+    \alpha = u_1u_2 + u_3u_4 = -\frac{1}{2} i \, \sqrt{3} - \frac{3}{2}\\
+    \beta = u_1u_3 + u_2u_4 = \frac{1}{2} i \, \sqrt{3} - \frac{3}{2}\\
+    \gamma = u_1u_4 + u_2u_3 =3
+\end{gather*}
+And has resolvant cubic:
+$$(x-\alpha)(x-\beta)(x-\gamma)= x^3 - 6x - 9$$
+The quid is that $\alpha=1+\omega^2$ and $\beta=\omega-1$ and thus $[K(\alpha,\beta,\gamma):K]=3$ as claimed. 
+
+By trial and error and using Theorem V.4.12 the following polynomial with exactly 5 real roots. 
+$$x^7-3\cdot10^{4}x^3 + 3\cdot 10^5x- 3\cdot 10^5$$
+By the rule of signs and using the graph shown below, it has 3 positive 2 negative roots. Also it is of order 7 and irreducible by Eisenstein with prime 3.
+    \begin{figure}[h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{sage0.png}
+\caption{Graph of the polynomial $10^{-5}x^7-30^{-1}x^3 + 3x- 3$}
+\end{center}
+\end{figure}
+
 \problem{3}
 Let $\theta \from \hom_S(B,C)\otimes_R B \to C$ defined as:
 $$\theta (h\otimes_R b)= h(b)$$
@@ -22,8 +42,15 @@ $$h_{a\,r}(b) = (a\, r) \otimes_ R b = a \otimes_ R (r\,b)= h_a(r\, b) = h_ar(b)
 Since this is the case for any $b\in B$ then $\lambda(ar)= h_a r= \lambda(a)r$. To show that $\lambda$ is a group morphism requires of  an identical proof.
 
 \problem{4}
-$K=\ZZ_2(x)$ is a field in which the element $x$ is prime. This is because 
+$K=\ZZ_2(x)$ is a field in which the element $x$ is prime. This is because assuming that $x$ is reducible would imply it is algebraic over $\ZZ_2$. Using this result, the polynomial $y^2- x\in \ZZ_2(x)[y]$ turns out to be irreducible by the Eisenstein's criterion. Moreover, the formal derivative of $y^2-x$ is zero and thus not separable.
 
+Next we argue that all irreducible polynomials in a finite field are separable. Consider a finite field $K$ with characteristic $p$. Assume for the sake of contradiction that $f\in K[x]$ is an irreducible polynomial of positive degree that is not separable. Then $f'=0$ and this means that $f$ can be written as a polynomial in $x^p$. 
+
+To see the last assertion it is enough to work on a monomial $x^k$. If it is not zero, and its derivative is, then it must be the case that $k\, x^{k}=0\, x$, equivalently, $k\equiv 0 \mod p$.
+
+By Fermat's little theorem:
+$$f(x) = a_n x^{p\,n}+\ldots + a_0 = (a_n+\ldots +a_1)x +a_0$$
+And we get the contradicting conclusion that a linear polynomial is irreducible.
 \problem{6}
 Let $\phi \from A\to B$ be a monomorphism. The induced morphims of $\phi$ is defined for all $f\in \hom(B,\QQ/\ZZ)$ as: 
 $$\theta f= id\circ f\circ \phi$$
